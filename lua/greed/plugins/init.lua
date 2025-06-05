@@ -44,4 +44,9 @@ return {
 			require("lsp_extra_dim").setup()
 		end,
 	},
+	{
+		"tpope/vim-sleuth",
+		event = "BufEnterPre",
+		opts = {},
+	},
 }
