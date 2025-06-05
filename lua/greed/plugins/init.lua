@@ -46,7 +46,15 @@ return {
 	},
 	{
 		"tpope/vim-sleuth",
-		event = "BufEnterPre",
+		event = "BufEnter",
 		opts = {},
+	},
+
+	{
+		"m4xshen/hardtime.nvim",
+		event = "BufEnter",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {},
+		enabled = true,
 	},
 }
