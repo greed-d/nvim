@@ -9,7 +9,7 @@ vim.schedule(function()
 end)
 
 -- [[  Make cursor more blocky  ]]
-o.guicursor = ""
+-- o.guicursor = ""
 
 -- [[ Line number stuff ]]
 o.nu = true

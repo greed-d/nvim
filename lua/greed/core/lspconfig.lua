@@ -2,6 +2,7 @@ vim.lsp.enable({
 	"lua_ls",
 	"basedpyright",
 	"ruff",
+	"vale_ls",
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "rounded" })
