@@ -2,6 +2,8 @@
 
 local o = vim.opt
 vim.g.netrw_banner = 0
+
+o.winborder = "single"
 --
 -- [[ Clipboard ]]
 vim.schedule(function()
