@@ -48,13 +48,18 @@ return {
 		"tpope/vim-sleuth",
 		event = "BufEnter",
 	},
-
 	{
-		"m4xshen/hardtime.nvim",
-		enabled = false,
-		event = "BufEnter",
-		dependencies = { "MunifTanjim/nui.nvim" },
-		opts = {},
-		enabled = true,
+		"vyfor/cord.nvim",
+		build = ":Cord update",
+		-- opts = {}
 	},
+
+	-- {
+	-- 	"m4xshen/hardtime.nvim",
+	-- 	enabled = false,
+	-- 	event = "BufEnter",
+	-- 	dependencies = { "MunifTanjim/nui.nvim" },
+	-- 	opts = {},
+	-- 	enabled = true,
+	-- },
 }
