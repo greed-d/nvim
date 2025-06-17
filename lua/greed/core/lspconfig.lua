@@ -2,11 +2,12 @@ vim.lsp.enable({
 	"lua_ls",
 	"basedpyright",
 	"ruff",
+	"qmlls6",
 	"vale_ls",
 })
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "rounded" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({ border = "rounded" })
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "rounded" })
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({ border = "rounded" })
 
 vim.diagnostic.config({
 	virtual_text = true,
