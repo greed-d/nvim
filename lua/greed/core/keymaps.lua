@@ -4,6 +4,8 @@ local map = vim.keymap.set
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+map("n", "<C-s>", ":w<CR>", opts)
+
 -- [[ No highlight after pressing escape ]]
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Escape Highlight", silent = true })
 
@@ -16,8 +18,8 @@ map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc 
 map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- [[ Center Screen on C-d,u ]]
-map("n", "<C-d>", "<C-d>zz", { desc = "bring screen to middle" })
-map("n", "<C-u>", "<C-u>zz", { desc = "bring screen to middle" })
+-- map("n", "<C-d>", "<C-d>zz", { desc = "bring screen to middle" })
+-- map("n", "<C-u>", "<C-u>zz", { desc = "bring screen to middle" })
 
 -- [[ Useful everyday keybinds ]]
 map("x", "p", 'p:let @"=@0<CR>', { silent = true })
@@ -35,8 +37,6 @@ map("v", ">", ">gv", opts)
 -- map("v", "p", '"_dp', opts)
 -- map({"n", "v"}, "<leader>d", [["_d]])
 -- map("n", "x" , "_x", opts)
-
-map("n", "<leader>cf", vim.lsp.buf.format, { desc = "[C]ode [F]ormatting" })
 
 -- [[ Tabs Stuff ]]
 map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
@@ -89,4 +89,7 @@ map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 
 -- [[ LSP stuff]]
-map("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+map("n", "K", vim.lsp.buf.hover, { desc = "LSP : Hover" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP : [C]ode [A]ction" })
+map("n", "<leader>cf", vim.lsp.buf.format, { desc = "LSP : [C]ode [F]ormatting" })
+map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP : [C]ode [R]ename" })
