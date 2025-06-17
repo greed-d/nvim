@@ -35,7 +35,7 @@ return {
 				lua = { "stylua" },
 				typescript = { "prettierd" },
 				css = { "prettierd" },
-				python = { "ruff" },
+				-- python = { "ruff" },
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
 				-- Conform can also run multiple formatters sequentially
