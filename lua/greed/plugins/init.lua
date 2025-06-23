@@ -53,13 +53,18 @@ return {
 		build = ":Cord update",
 		-- opts = {}
 	},
-
-	-- {
-	-- 	"m4xshen/hardtime.nvim",
-	-- 	enabled = false,
-	-- 	event = "BufEnter",
-	-- 	dependencies = { "MunifTanjim/nui.nvim" },
-	-- 	opts = {},
-	-- 	enabled = true,
-	-- },
+	{
+		"szymonwilczek/vim-be-better",
+		config = function()
+			-- Optional: Enable logging for debugging
+			vim.g.vim_be_better_log_file = 1
+		end,
+	},
+	{
+		"m4xshen/hardtime.nvim",
+		enabled = true,
+		event = "BufEnter",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {},
+	},
 }

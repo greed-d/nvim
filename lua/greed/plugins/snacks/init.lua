@@ -25,7 +25,7 @@ return {
 		git = { enabled = true },
 		gitbrowse = { enabled = true },
 		bigfile = { enabled = true },
-		explorer = { enabled = true },
+		-- explorer = { enabled = true },
 		input = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },

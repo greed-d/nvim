@@ -18,8 +18,8 @@ map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc 
 map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- [[ Center Screen on C-d,u ]]
--- map("n", "<C-d>", "<C-d>zz", { desc = "bring screen to middle" })
--- map("n", "<C-u>", "<C-u>zz", { desc = "bring screen to middle" })
+map("n", "<C-d>", "<C-d>zz", { desc = "bring screen to middle" })
+map("n", "<C-u>", "<C-u>zz", { desc = "bring screen to middle" })
 
 -- [[ Useful everyday keybinds ]]
 map("x", "p", 'p:let @"=@0<CR>', { silent = true })

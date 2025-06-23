@@ -136,12 +136,18 @@ return {
 	{
 		"sainnhe/everforest",
 		lazy = false,
-		enabled = false,
+		enabled = true,
 		priority = 1000,
 		config = function()
 			-- Optionally configure and load the colorscheme
 			-- directly inside the plugin declaration.
-			vim.g.everforest_enable_italic = true
+			vim.g.everforest_enable_italic = false
+			vim.g.everforest_disable_underline = false
+			vim.g.everforest_dim_inactive_windows = false
+			vim.g.everforest_diagnostic_line_highlight = false
+			vim.g.everforest_float_style = "dim"
+			vim.g.everforest_dim_inactive_windows = false
+			vim.g.everforest_ui_contrast = "high"
 			vim.cmd.colorscheme("everforest")
 
 			local function set_highlight(group, opts)
@@ -162,7 +168,11 @@ return {
 			set_highlight("VirtualTextInfo", { fg = "#7fbbb3" })
 			set_highlight("VirtualTextError", { fg = "#e67e80" })
 			set_highlight("VirtualTextWarning", { fg = "#dbbc7f" })
-			set_highlight("NormalFloat", { fg = "#272e33" })
+			set_highlight("NormalFloat", { bg = "#1e2326" })
+			set_highlight("BlinkCmpMenuSelection", { bg = "#374145" })
+			set_highlight("DropBarMenuSbar", { bg = "#1e2326" })
+			set_highlight("WinBarNC", { bg = "#1e2326" })
+			-- set_highlight("DiagnosticUnderlineError", { bg = "NONE" })
 		end,
 	},
 	{
@@ -176,7 +186,7 @@ return {
 	},
 	{
 		"wtfox/jellybeans.nvim",
-		enabled = true,
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {}, -- Optional
@@ -188,6 +198,8 @@ return {
 			end
 
 			set_highlight("NormalFloat", { bg = "#151515" })
+			set_highlight("SnacksPickerList", { bg = "#151515" })
+			set_highlight("BlinkCmpMenuSelection", { bg = "#403c41" })
 		end,
 	},
 	-- {

@@ -18,57 +18,55 @@ return {
 		local my_filename = require("lualine.components.filename"):extend()
 		my_filename.apply_icon = require("lualine.components.filetype").apply_icon
 
-
--- Color table for highlights
--- stylua: ignore
-    -- local colors = {
-    --   bg       = '#1a1b2A',
-    --   fg       = '#bbc2cf',
-    --   yellow   = '#ECBE7B',
-    --   cyan     = '#008080',
-    --   darkblue = '#081633',
-    --   green    = '#98be65',
-    --   orange   = '#FF8800',
-    --   violet   = '#a9a1e1',
-    --   magenta  = '#c678dd',
-    --   blue     = '#82AAFF',
-    --   red      = '#ec5f67',
-    -- }
-
-local colors = {
-  aqua     = "#b0b8c0",  -- cadet_blue
-  bg       = "#151515",  -- background
-  blue     = "#556779",  -- bayoux_blue
-  cyan     = "#7AB0DF",  -- perano (assuming accent_color_2)
-  darkred  = "#40000a",  -- temptress
-  fg       = "#e8e8d3",  -- foreground
-  gray     = "#1c1c1c",  -- grey_one
-  green    = "#afd787",  -- ok
-  lime     = "#54CED6",  -- fallback since green_smoke is undefined
-  orange   = "#ffaf00",  -- warning
-  pink     = "#a0a8b0",  -- wewak
-  purple   = "#c7c7c7",  -- biloba_flower
-  magenta  = "#c7c7c7",  -- same as purple
-  red      = "#c95c5c",  -- error
-  yellow   = "#888888",  -- koromiko
-}
+		-- Color table for highlights
 		-- local colors = {
-		--   aqua = "#7AB0DF",
-		--   bg = "#1C212A",
-		--   blue = "#5FB0FC",
-		--   cyan = "#70C0BA",
-		--   darkred = "#FB7373",
-		--   fg = "#C7C7CA",
-		--   gray = "#222730",
-		--   green = "#79DCAA",
-		--   lime = "#54CED6",
-		--   orange = "#FFD064",
-		--   pink = "#D997C8",
-		--   purple = "#C397D8",
-		--   magenta = "#C397D8",
-		--   red = "#F87070",
-		--   yellow = "#FFE59E",
+		--   bg       = '#1a1b2A',
+		--   fg       = '#bbc2cf',
+		--   yellow   = '#ECBE7B',
+		--   cyan     = '#008080',
+		--   darkblue = '#081633',
+		--   green    = '#98be65',
+		--   orange   = '#FF8800',
+		--   violet   = '#a9a1e1',
+		--   magenta  = '#c678dd',
+		--   blue     = '#82AAFF',
+		--   red      = '#ec5f67',
 		-- }
+
+		-- local colors = {
+		-- 	aqua = "#b0b8c0", -- cadet_blue
+		-- 	bg = "#151515", -- background
+		-- 	blue = "#556779", -- bayoux_blue
+		-- 	cyan = "#7AB0DF", -- perano (assuming accent_color_2)
+		-- 	darkred = "#40000a", -- temptress
+		-- 	fg = "#e8e8d3", -- foreground
+		-- 	gray = "#1c1c1c", -- grey_one
+		-- 	green = "#afd787", -- ok
+		-- 	lime = "#54CED6", -- fallback since green_smoke is undefined
+		-- 	orange = "#ffaf00", -- warning
+		-- 	pink = "#a0a8b0", -- wewak
+		-- 	purple = "#c7c7c7", -- biloba_flower
+		-- 	magenta = "#c7c7c7", -- same as purple
+		-- 	red = "#c95c5c", -- error
+		-- 	yellow = "#888888", -- koromiko
+		-- }
+		local colors = {
+			aqua = "#83c092", -- closest match to aqua from Everforest
+			bg = "#1e2326", -- bg_dim
+			blue = "#7fbbb3", -- common Everforest blue tone
+			cyan = "#9da9a0", -- often used as soft cyan in Everforest
+			darkred = "#e67e80", -- closest to dark red from Everforest
+			fg = "#d3c6aa", -- foreground in Everforest
+			gray = "#4f5b58", -- bg5 (Everforest's greyer gray)
+			green = "#a7c080", -- Everforest green tone
+			lime = "#87c095", -- close to green_smoke
+			orange = "#e69875", -- Everforest orange
+			pink = "#d699b6", -- pink/magenta in Everforest
+			purple = "#a292a3", -- purple from Everforest
+			magenta = "#a292a3", -- same as purple
+			red = "#e67e80", -- red/error in Everforest
+			yellow = "#dbbc7f", -- yellow/warning in Everforest
+		}
 		-- local colors = {
 		--   aqua = "#83C092",
 		--   bg = "#272E33", -- Using bg0 from the palette

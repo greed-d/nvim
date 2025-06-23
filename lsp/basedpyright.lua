@@ -8,7 +8,7 @@ return {
 	},
 	settings = {
 		basedpyright = {
-			typeCheckingMode = "standard",
+			typeCheckingMode = "basic",
 		},
 	},
 	capabilities = vim.tbl_deep_extend(
