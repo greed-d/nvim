@@ -67,4 +67,10 @@ return {
 		dependencies = { "MunifTanjim/nui.nvim" },
 		opts = {},
 	},
+	{
+		"benomahony/uv.nvim",
+		opts = {
+			picker_integration = true,
+		},
+	}
 }

@@ -52,7 +52,7 @@ map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
 -- [[ Quickfix Stuff ]]
-map("n", "<leader>xq", function()
+map("n", "<leader>q", function()
 	local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
 	if not success and err then
 		vim.notify(err, vim.log.levels.WARN)
