@@ -38,6 +38,8 @@ map("v", ">", ">gv", opts)
 -- map({"n", "v"}, "<leader>d", [["_d]])
 -- map("n", "x" , "_x", opts)
 
+-- [[ Code stuff ]]
+
 -- [[ Tabs Stuff ]]
 map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
@@ -93,3 +95,6 @@ map("n", "K", vim.lsp.buf.hover, { desc = "LSP : Hover" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP : [C]ode [A]ction" })
 map("n", "<leader>cf", vim.lsp.buf.format, { desc = "LSP : [C]ode [F]ormatting" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP : [C]ode [R]ename" })
+map("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
+map("n", "<leader>cf", vim.lsp.buf.format, { desc = "[C]ode [F]ormatting" })
