@@ -37,8 +37,8 @@ return {
 				-- better descriptions
 				{ "gx", desc = "Open with system app" },
 			},
-		},
-	},
+		}
+},
 	keys = {
 		{
 			"<leader>?",

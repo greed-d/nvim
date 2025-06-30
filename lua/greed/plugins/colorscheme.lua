@@ -156,6 +156,7 @@ return {
 
 			set_highlight("FloatBorder", { bg = "#1e2326" })
 			set_highlight("Normal", { bg = "#1e2326" })
+			set_highlight("NormalNC", { bg = "#1e2326" })
 			set_highlight("SnacksPickerTitle", { bg = "#7fbbb3", fg = "#272e33" })
 			set_highlight("SnacksPickerPreview", { bg = "#1e2326" })
 			set_highlight("SnacksPickerList", { bg = "#1e2326" })
