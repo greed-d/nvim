@@ -92,6 +92,16 @@ return {
 					nnoremap = true,
 				},
 			},
+			{
+				"'7",
+				function()
+					require("harpoon"):list():select(7)
+				end,
+				{
+					desc = "7th File harpoon",
+					nnoremap = true,
+				},
+			},
 		}
 		return keys
 	end,

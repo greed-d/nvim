@@ -69,21 +69,21 @@ return {
 		-- 	yellow = "#dbbc7f", -- yellow/warning in Everforest
 		-- }
 		-- local colors = {
-		--   aqua = "#83C092",
-		--   bg = "#272E33", -- Using bg0 from the palette
-		--   blue = "#7FBBB3",
-		--   cyan = "#7FBBB3", -- Closest match from the palette (blue is similar to cyan in some schemes)
-		--   darkred = "#4C3743", -- Using bg_red from the palette
-		--   fg = "#D3C6AA",
-		--   gray = "#7A8478", -- Using gray0 from the palette
-		--   green = "#A7C080",
-		--   lime = "#A7C080", -- Closest match from the palette (green)
-		--   orange = "#E69875",
-		--   pink = "#D699B6", -- Closest match from the palette (purple is similar to pink in some schemes)
-		--   purple = "#D699B6",
-		--   magenta = "#D699B6", -- Closest match from the palette (purple)
-		--   red = "#E67E80",
-		--   yellow = "#DBBC7F",
+		-- 	aqua = "#83C092",
+		-- 	bg = "#272E33", -- Using bg0 from the palette
+		-- 	blue = "#7FBBB3",
+		-- 	cyan = "#7FBBB3", -- Closest match from the palette (blue is similar to cyan in some schemes)
+		-- 	darkred = "#4C3743", -- Using bg_red from the palette
+		-- 	fg = "#D3C6AA",
+		-- 	gray = "#7A8478", -- Using gray0 from the palette
+		-- 	green = "#A7C080",
+		-- 	lime = "#A7C080", -- Closest match from the palette (green)
+		-- 	orange = "#E69875",
+		-- 	pink = "#D699B6", -- Closest match from the palette (purple is similar to pink in some schemes)
+		-- 	purple = "#D699B6",
+		-- 	magenta = "#D699B6", -- Closest match from the palette (purple)
+		-- 	red = "#E67E80",
+		-- 	yellow = "#DBBC7F",
 		-- }
 
 		local conditions = {
