@@ -1,0 +1,19 @@
+{
+  "block-snip": {
+    "prefix": "bl",
+    "body": "{% block content %} $0 {% endblock %}",
+    "description": "django block"
+  },
+
+  "if-snip": {
+    "prefix": "if",
+    "body": "{% if $0 %} $1 {% endif %}",
+    "description": "django template if"
+  },
+
+  "for-snip": {
+    "prefix": "for",
+    "body": "{% for $0 %} $1 {% endfor %}",
+    "description": "django template for"
+  }
+}
