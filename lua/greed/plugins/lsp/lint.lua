@@ -7,7 +7,8 @@ return {
 			lint.linters_by_ft = {
 				markdown = { "markdownlint" },
 				typescript = { "eslint_d" },
-				python = { "ruff" },
+				python = { "flake8" },
+				html = { "djlint" },
 			}
 
 			-- You can disable the default linters by setting their filetypes to nil:

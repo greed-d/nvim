@@ -1,7 +1,7 @@
 return {
 	{ -- Autoformat
 		"stevearc/conform.nvim",
-		event = { "BufWritePre" },
+		event = { "BufEnter" },
 		cmd = { "ConformInfo" },
 		keys = {
 			{
@@ -35,9 +35,11 @@ return {
 				lua = { "stylua" },
 				typescript = { "prettierd" },
 				css = { "prettierd" },
-				-- python = { "ruff" },
+				-- python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+				-- python = { "black", "isort" },
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
+				html = { "djlint" },
 				cpp = { "clang-format" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
