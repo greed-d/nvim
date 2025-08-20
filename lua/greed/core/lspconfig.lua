@@ -4,6 +4,7 @@ vim.lsp.enable({
 	"ruff",
 	"qmlls6",
 	"vale_ls",
+	"emmet_ls",
 	"clangd",
 })
 
