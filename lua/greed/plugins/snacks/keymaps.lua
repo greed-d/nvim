@@ -129,7 +129,6 @@ return {
 		desc = "Find Config File",
 	},
 	-- {
-	--
 	-- 	"<leader>sf",
 	-- 	function()
 	-- 		Snacks.picker.files()
