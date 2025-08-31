@@ -1,5 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	enabled = true,
 	dependencies = {
 		"DaikyXendo/nvim-material-icon",
 		"greed-d/lualine-so-fancy.nvim",
@@ -19,19 +20,19 @@ return {
 		my_filename.apply_icon = require("lualine.components.filetype").apply_icon
 
 		-- Color table for highlights
-		-- local colors = {
-		--   bg       = '#1a1b2A',
-		--   fg       = '#bbc2cf',
-		--   yellow   = '#ECBE7B',
-		--   cyan     = '#008080',
-		--   darkblue = '#081633',
-		--   green    = '#98be65',
-		--   orange   = '#FF8800',
-		--   violet   = '#a9a1e1',
-		--   magenta  = '#c678dd',
-		--   blue     = '#82AAFF',
-		--   red      = '#ec5f67',
-		-- }
+		local colors = {
+			bg = "#1a1b2A",
+			fg = "#bbc2cf",
+			yellow = "#ECBE7B",
+			cyan = "#008080",
+			darkblue = "#081633",
+			green = "#98be65",
+			orange = "#FF8800",
+			violet = "#a9a1e1",
+			magenta = "#c678dd",
+			blue = "#82AAFF",
+			red = "#ec5f67",
+		}
 
 		-- local colors = {
 		-- 	aqua = "#b0b8c0", -- cadet_blue
@@ -50,23 +51,23 @@ return {
 		-- 	red = "#c95c5c", -- error
 		-- 	yellow = "#888888", -- koromiko
 		-- }
-		local colors = {
-			aqua = "#83c092", -- closest match to aqua from Everforest
-			bg = "#1e2326", -- bg_dim
-			blue = "#7fbbb3", -- common Everforest blue tone
-			cyan = "#9da9a0", -- often used as soft cyan in Everforest
-			darkred = "#e67e80", -- closest to dark red from Everforest
-			fg = "#d3c6aa", -- foreground in Everforest
-			gray = "#4f5b58", -- bg5 (Everforest's greyer gray)
-			green = "#a7c080", -- Everforest green tone
-			lime = "#87c095", -- close to green_smoke
-			orange = "#e69875", -- Everforest orange
-			pink = "#d699b6", -- pink/magenta in Everforest
-			purple = "#a292a3", -- purple from Everforest
-			magenta = "#a292a3", -- same as purple
-			red = "#e67e80", -- red/error in Everforest
-			yellow = "#dbbc7f", -- yellow/warning in Everforest
-		}
+		-- local colors = {
+		-- 	aqua = "#83c092", -- closest match to aqua from Everforest
+		-- 	bg = "#1e2326", -- bg_dim
+		-- 	blue = "#7fbbb3", -- common Everforest blue tone
+		-- 	cyan = "#9da9a0", -- often used as soft cyan in Everforest
+		-- 	darkred = "#e67e80", -- closest to dark red from Everforest
+		-- 	fg = "#d3c6aa", -- foreground in Everforest
+		-- 	gray = "#4f5b58", -- bg5 (Everforest's greyer gray)
+		-- 	green = "#a7c080", -- Everforest green tone
+		-- 	lime = "#87c095", -- close to green_smoke
+		-- 	orange = "#e69875", -- Everforest orange
+		-- 	pink = "#d699b6", -- pink/magenta in Everforest
+		-- 	purple = "#a292a3", -- purple from Everforest
+		-- 	magenta = "#a292a3", -- same as purple
+		-- 	red = "#e67e80", -- red/error in Everforest
+		-- 	yellow = "#dbbc7f", -- yellow/warning in Everforest
+		-- }
 		-- local colors = {
 		--   aqua = "#83C092",
 		--   bg = "#272E33", -- Using bg0 from the palette
