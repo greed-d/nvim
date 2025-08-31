@@ -3,7 +3,7 @@
 local o = vim.opt
 vim.g.netrw_banner = 0
 
-o.winborder = "single"
+o.winborder = "none"
 --
 -- [[ Clipboard ]]
 vim.schedule(function()

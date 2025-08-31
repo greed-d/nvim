@@ -4,6 +4,7 @@ vim.lsp.enable({
 	"ruff",
 	"qmlls6",
 	"vale_ls",
+	"clangd",
 })
 
 -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "rounded" })
@@ -21,7 +22,7 @@ vim.diagnostic.config({
 	},
 	severity_sort = true,
 	float = {
-		border = "rounded",
+		border = "none",
 		source = true,
 	},
 	signs = {
