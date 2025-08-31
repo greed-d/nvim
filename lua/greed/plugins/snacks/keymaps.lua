@@ -128,13 +128,14 @@ return {
 		end,
 		desc = "Find Config File",
 	},
-	{
-		"<leader>sf",
-		function()
-			Snacks.picker.files()
-		end,
-		desc = "Find Files",
-	},
+	-- {
+	--
+	-- 	"<leader>sf",
+	-- 	function()
+	-- 		Snacks.picker.files()
+	-- 	end,
+	-- 	desc = "Find Files",
+	-- },
 	{
 		"<leader>ss",
 		function()
@@ -252,5 +253,12 @@ return {
 			Snacks.picker.lsp_workspace_symbols()
 		end,
 		desc = "LSP Workspace Symbols",
+	},
+	{ --
+		"<leader>sf",
+		function()
+			require("greed.plugins.snacks.fff").fff()
+		end,
+		{ desc = "FFF" },
 	},
 }
