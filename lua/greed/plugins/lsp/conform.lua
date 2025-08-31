@@ -38,6 +38,7 @@ return {
 				-- python = { "ruff" },
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
+				cpp = { "clang-format" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
