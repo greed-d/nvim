@@ -8,6 +8,7 @@ return {
 	},
 
 	event = "VeryLazy",
+	enabled = true,
 	config = function()
 		-- Eviline config for lualine
 		-- Author: shadmansaleh
