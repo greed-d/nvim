@@ -8,6 +8,12 @@ return {
 		event = "VeryLazy",
 		opts = {},
 	},
+
+	-- {
+	-- 	"RayZ0rr/mini.statusline",
+	-- 	version = false,
+	-- 	opts = {},
+	-- },
 	-- File explorer (this works properly with oil unlike nvim-tree)
 	{
 		"echasnovski/mini.files",
