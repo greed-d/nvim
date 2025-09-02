@@ -66,3 +66,5 @@ o.whichwrap:append("<>[]hl")
 
 -- [[ Mouse Support ]]
 o.mouse = "a"
+
+vim.cmd([[set runtimepath+=.nvim]])
