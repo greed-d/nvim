@@ -1,12 +1,5 @@
 return {
 	enabled = true,
-	layout = {
-		-- The default layout for "telescopy" pickers, e.g. `files`, `commands`, ...
-		-- It will not override non-standard pickers, e.g. `explorer`, `lines`, ...
-		preset = function()
-			return vim.o.columns >= 120 and "telescope" or "vertical"
-		end,
-	},
 	ui_select = true,
 	formatters = {
 		file = {
@@ -16,6 +9,13 @@ return {
 			icon_width = 2,
 			git_status_hl = true,
 		},
+	},
+	layout = {
+		-- The default layout for "telescopy" pickers, e.g. `files`, `commands`, ...
+		-- It will not override non-standard pickers, e.g. `explorer`, `lines`, ...
+		preset = function()
+			return vim.o.columns >= 120 and "telescope" or "vertical"
+		end,
 	},
 	layouts = {
 		telescope = {
