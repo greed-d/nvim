@@ -97,4 +97,3 @@ map("n", "<leader>cf", vim.lsp.buf.format, { desc = "LSP : [C]ode [F]ormatting" 
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP : [C]ode [R]ename" })
 map("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
-map("n", "<leader>cf", vim.lsp.buf.format, { desc = "[C]ode [F]ormatting" })
