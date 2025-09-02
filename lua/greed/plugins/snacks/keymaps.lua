@@ -136,6 +136,14 @@ return {
 	-- 	desc = "Find Files",
 	-- },
 	{
+		"<leader>sf",
+		function()
+			require("greed.plugins.snacks.fff").fff()
+		end,
+		desc = "FFF",
+	},
+
+	{
 		"<leader>ss",
 		function()
 			Snacks.picker.pickers()
