@@ -66,18 +66,3 @@ o.whichwrap:append("<>[]hl")
 
 -- [[ Mouse Support ]]
 o.mouse = "a"
-
-vim.cmd([[set runtimepath+=.nvim]])
--- vim.o.fillchars = table.concat({
--- 	"horiz:─",
--- 	"horizdown:┬",
--- 	"vert:│",
--- 	"vertleft:┤",
--- 	"vertright:├",
--- 	"verthoriz:┼",
--- 	"fold: ",
--- 	"eob:~",
--- 	"msgsep:─",
--- 	"foldopen:▾",
--- 	"foldclose:▸",
--- }, ",")

@@ -57,7 +57,6 @@ return {
 				-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 			},
 		})
-		require("catppuccin").setup({})
 
 		vim.cmd.colorscheme("catppuccin")
 		local function set_highlight(group, opts)
