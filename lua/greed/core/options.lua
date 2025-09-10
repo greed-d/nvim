@@ -66,4 +66,3 @@ o.whichwrap:append("<>[]hl")
 
 -- [[ Mouse Support ]]
 o.mouse = "a"
-o.winborder = "rounded"

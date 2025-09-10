@@ -18,13 +18,13 @@ return {
 				auto_show = true,
 				auto_show_delay_ms = 100,
 				window = {
-					border = nil,
+					border = "none",
 					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
 				},
 			},
 
 			menu = {
-				border = nil,
+				border = "none",
 				draw = {
 					columns = {
 						{ "label", gap = 2, "kind_icon" },
