@@ -3,7 +3,7 @@
 local o = vim.opt
 vim.g.netrw_banner = 0
 
-o.winborder = "none"
+o.winborder = "single"
 --
 -- [[ Clipboard ]]
 vim.schedule(function()
@@ -68,3 +68,16 @@ o.whichwrap:append("<>[]hl")
 o.mouse = "a"
 
 vim.cmd([[set runtimepath+=.nvim]])
+-- vim.o.fillchars = table.concat({
+-- 	"horiz:─",
+-- 	"horizdown:┬",
+-- 	"vert:│",
+-- 	"vertleft:┤",
+-- 	"vertright:├",
+-- 	"verthoriz:┼",
+-- 	"fold: ",
+-- 	"eob:~",
+-- 	"msgsep:─",
+-- 	"foldopen:▾",
+-- 	"foldclose:▸",
+-- }, ",")
