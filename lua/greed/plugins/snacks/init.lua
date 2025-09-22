@@ -31,7 +31,7 @@ return {
 		scope = { enabled = true },
 		words = { enabled = true },
 		bufdelete = { enabled = true },
-		scroll = { enabled = true },
+		scroll = { enabled = false },
 		dim = { enabled = false },
 	},
 	config = function(_, opts)
