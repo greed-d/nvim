@@ -35,12 +35,13 @@ return {
 				lua = { "stylua" },
 				typescript = { "prettierd" },
 				css = { "prettierd" },
-				-- python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 				-- python = { "black", "isort" },
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
 				html = { "djlint" },
 				cpp = { "clang-format" },
+				http = { "kulala-fmt" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
