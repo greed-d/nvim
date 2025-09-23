@@ -28,14 +28,14 @@ return {
 				end
 				return {
 					timeout_ms = 500,
-					lsp_format = lsp_format_opt,
+					-- lsp_format = lsp_format_opt,
 				}
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
 				typescript = { "prettierd" },
 				css = { "prettierd" },
-				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+				-- python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 				-- python = { "black", "isort" },
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
