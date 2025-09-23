@@ -192,6 +192,13 @@ return {
 		end,
 		desc = "Projects",
 	},
+	{
+		"<leader>s/",
+		function()
+			Snacks.picker.grep({ buffers = true })
+		end,
+		{ desc = "[S]earch [/] in Open Files" },
+	},
 
 	-- NOTE: [[ TODO Comments ]]
 	{
