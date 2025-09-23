@@ -6,6 +6,7 @@ vim.lsp.enable({
 	"vale_ls",
 	"emmet_ls",
 	"clangd",
+	"gopls",
 })
 
 -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "rounded" })
