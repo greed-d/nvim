@@ -12,7 +12,7 @@ return {
 		completion = {
 
 			ghost_text = { enabled = false },
-			-- signature = { enabled = true },
+			signature = { enabled = true },
 
 			documentation = {
 				auto_show = true,

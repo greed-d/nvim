@@ -1,6 +1,6 @@
 vim.lsp.enable({
 	"lua_ls",
-	"basedpyright",
+	-- "basedpyright",
 	"ruff",
 	"qmlls6",
 	"vale_ls",
@@ -24,7 +24,6 @@ vim.diagnostic.config({
 	},
 	severity_sort = true,
 	float = {
-		border = "none",
 		source = true,
 	},
 	signs = {
@@ -133,7 +132,7 @@ local function check_lsp_capabilities()
 		local capability_list = {
 			{ "Completion", caps.completionProvider },
 			{ "Hover", caps.hoverProvider },
-			{ "Signature Help", caps.signatureHelpProvider },
+			-- { "Signature Help", caps.signatureHelpProvider },
 			{ "Go to Definition", caps.definitionProvider },
 			{ "Go to Declaration", caps.declarationProvider },
 			{ "Go to Implementation", caps.implementationProvider },
