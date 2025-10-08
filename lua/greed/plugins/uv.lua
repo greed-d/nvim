@@ -1,11 +1,11 @@
 return {
 	"benomahony/uv.nvim",
 	ft = "python",
-	event = "BufReadPre",
+	lazy = true,
 	opts = {
 		picker_integration = true,
 		keymaps = {
-			prefix = "<leader>u", -- Main prefix for uv commands
+			prefix = "<leader>uv", -- Main prefix for uv commands
 			commands = true, -- Show uv commands menu (<leader>x)
 			run_file = true, -- Run current file (<leader>xr)
 			run_selection = true, -- Run selected code (<leader>xs)

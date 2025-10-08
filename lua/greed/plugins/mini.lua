@@ -1,6 +1,6 @@
 return {
 	-- Mini Nvim
-	{ "echasnovski/mini.nvim", version = false },
+	-- { "echasnovski/mini.nvim", version = false },
 	-- Comments
 	{
 		"echasnovski/mini.comment",
@@ -17,7 +17,6 @@ return {
 	-- File explorer (this works properly with oil unlike nvim-tree)
 	{
 		"echasnovski/mini.files",
-		event = "VeryLazy",
 		enabled = true,
 		opts = {
 

@@ -1,14 +1,22 @@
-vim.lsp.enable({
-	"lua_ls",
-	-- "basedpyright",
-	"ruff",
-	"qmlls6",
-	"vale_ls",
-	"emmet_ls",
-	"clangd",
-	"gopls",
-})
+-- INFO: read filenames on lsp/ directory and enable those
+local lsp_files = {}
+local lsp_dir = vim.fn.stdpath("config") .. "/lsp/"
 
+for _, file in ipairs(vim.fn.globpath(lsp_dir, "*.lua", false, true)) do
+	-- Read the first line of the file
+	local f = io.open(file, "r")
+	local first_line = f and f:read("*l") or ""
+	if f then
+		f:close()
+	end
+	-- Only include the file if it doesn't start with "-- disable"
+	if not first_line:match("^%-%- disable") then
+		local name = vim.fn.fnamemodify(file, ":t:r") -- `:t` gets filename, `:r` removes extension
+		table.insert(lsp_files, name)
+	end
+end
+
+vim.lsp.enable(lsp_files)
 -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "rounded" })
 -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({ border = "rounded" })
 

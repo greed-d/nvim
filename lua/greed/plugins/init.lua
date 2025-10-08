@@ -55,6 +55,7 @@ return {
 	},
 	{
 		"szymonwilczek/vim-be-better",
+		cmd = "VimBeBetter",
 		config = function()
 			-- Optional: Enable logging for debugging
 			vim.g.vim_be_better_log_file = 1
@@ -67,12 +68,12 @@ return {
 		dependencies = { "MunifTanjim/nui.nvim" },
 		opts = {},
 	},
-	{
-		"benomahony/uv.nvim",
-		opts = {
-			picker_integration = true,
-		},
-	},
+	-- {
+	-- 	"benomahony/uv.nvim",
+	-- 	opts = {
+	-- 		picker_integration = true,
+	-- 	},
+	-- },
 	{
 		"mistweaverco/kulala.nvim",
 		keys = {

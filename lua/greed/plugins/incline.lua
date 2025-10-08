@@ -3,6 +3,7 @@ return {
 	{
 		"b0o/incline.nvim",
 		enabled = true,
+		event = "BufEnter",
 		dependencies = { "DaikyXendo/nvim-material-icon" },
 		config = function()
 			local devicons = require("nvim-web-devicons")

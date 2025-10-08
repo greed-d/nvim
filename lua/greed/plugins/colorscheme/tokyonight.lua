@@ -1,7 +1,7 @@
 return {
 	"folke/tokyonight.nvim",
 	priority = 1000, -- Make sure to load this before all the other start plugins.
-	enabled = false,
+	enabled = true,
 	config = function()
 		---@diagnostic disable-next-line: missing-fields
 		require("tokyonight").setup({
@@ -19,6 +19,7 @@ return {
 			vim.api.nvim_set_hl(0, group, opts)
 		end
 		set_highlight("FloatBorder", { fg = "#45475A", bg = "NONE" })
+		set_highlight("NormalFloat", { bg = "#1a1b26" })
 		set_highlight("SnacksPickerTitle", { bg = "#7aa2f7", fg = "#1f2335" })
 		set_highlight("SnacksPickerPreview", { bg = "#1a1b26" })
 		set_highlight("SnacksPickerList", { bg = "#1a1b26" })

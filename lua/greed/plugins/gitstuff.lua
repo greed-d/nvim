@@ -2,6 +2,7 @@ return {
 	{
 		"tpope/vim-fugitive",
 		event = "BufEnter",
+		enabled = false,
 		config = function()
 			vim.keymap.set("n", "<leader>gg", vim.cmd.Git)
 			local myFugitive = vim.api.nvim_create_augroup("myFugitive", {})
