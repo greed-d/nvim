@@ -1,18 +1,10 @@
-local o = vim.opt
 local key = vim.keymap.set
 local keymap_opts = function(message)
 	return { desc = message, silent = true }
 end
 
-o.number = true
-o.relativenumber = true
-o.cursorline = true
-o.swapfile = false
-o.clipboard = "unnamedplus"
-o.tabstop = 4
-o.shiftwidth = 4
-o.signcolumn = "yes"
-o.winborder = "rounded"
+require("greed.core")
+
 
 
 vim.g.mapleader = " "
