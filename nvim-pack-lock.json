@@ -1,0 +1,28 @@
+{
+  "plugins": {
+    "lazydev.nvim": {
+      "rev": "258d2a5",
+      "src": "https://github.com/folke/lazydev.nvim"
+    },
+    "mini.pick": {
+      "rev": "96ee37d",
+      "src": "https://github.com/nvim-mini/mini.pick"
+    },
+    "nvim-lspconfig": {
+      "rev": "e688b48",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "oil.nvim": {
+      "rev": "919e155",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "bfe8c26",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
+    "vague.nvim": {
+      "rev": "27a19ff",
+      "src": "https://github.com/vague-theme/vague.nvim"
+    }
+  }
+}
