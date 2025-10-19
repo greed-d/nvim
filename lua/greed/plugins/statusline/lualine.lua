@@ -8,84 +8,14 @@ return {
 	},
 
 	event = "VeryLazy",
-	enabled = true,
 	config = function()
-		-- Eviline config for lualine
-		-- Author: shadmansaleh
-		-- Credit: glepnir
 		--
 		local lualine = require("lualine")
 
-		-- local arrow_statusline = require("arrow.statusline")
 		local my_filename = require("lualine.components.filename"):extend()
 		my_filename.apply_icon = require("lualine.components.filetype").apply_icon
 
-		-- Color table for highlights
-		local colors = {
-			bg = "#1a1b2A",
-			fg = "#bbc2cf",
-			yellow = "#ECBE7B",
-			cyan = "#008080",
-			darkblue = "#081633",
-			green = "#98be65",
-			orange = "#FF8800",
-			violet = "#a9a1e1",
-			magenta = "#c678dd",
-			blue = "#82AAFF",
-			red = "#ec5f67",
-		}
-
-		-- local colors = {
-		-- 	aqua = "#b0b8c0", -- cadet_blue
-		-- 	bg = "#151515", -- background
-		-- 	blue = "#556779", -- bayoux_blue
-		-- 	cyan = "#7AB0DF", -- perano (assuming accent_color_2)
-		-- 	darkred = "#40000a", -- temptress
-		-- 	fg = "#e8e8d3", -- foreground
-		-- 	gray = "#1c1c1c", -- grey_one
-		-- 	green = "#afd787", -- ok
-		-- 	lime = "#54CED6", -- fallback since green_smoke is undefined
-		-- 	orange = "#ffaf00", -- warning
-		-- 	pink = "#a0a8b0", -- wewak
-		-- 	purple = "#c7c7c7", -- biloba_flower
-		-- 	magenta = "#c7c7c7", -- same as purple
-		-- 	red = "#c95c5c", -- error
-		-- 	yellow = "#888888", -- koromiko
-		-- }
-		-- local colors = {
-		-- 	aqua = "#83c092", -- closest match to aqua from Everforest
-		-- 	bg = "#1e2326", -- bg_dim
-		-- 	blue = "#7fbbb3", -- common Everforest blue tone
-		-- 	cyan = "#9da9a0", -- often used as soft cyan in Everforest
-		-- 	darkred = "#e67e80", -- closest to dark red from Everforest
-		-- 	fg = "#d3c6aa", -- foreground in Everforest
-		-- 	gray = "#4f5b58", -- bg5 (Everforest's greyer gray)
-		-- 	green = "#a7c080", -- Everforest green tone
-		-- 	lime = "#87c095", -- close to green_smoke
-		-- 	orange = "#e69875", -- Everforest orange
-		-- 	pink = "#d699b6", -- pink/magenta in Everforest
-		-- 	purple = "#a292a3", -- purple from Everforest
-		-- 	magenta = "#a292a3", -- same as purple
-		-- 	red = "#e67e80", -- red/error in Everforest
-		-- 	yellow = "#dbbc7f", -- yellow/warning in Everforest
-		-- }
-		-- local colors = {
-		-- 	aqua = "#83C092",
-		-- 	bg = "#272E33", -- Using bg0 from the palette
-		-- 	blue = "#7FBBB3",
-		-- 	cyan = "#7FBBB3", -- Closest match from the palette (blue is similar to cyan in some schemes)
-		-- 	darkred = "#4C3743", -- Using bg_red from the palette
-		-- 	fg = "#D3C6AA",
-		-- 	gray = "#7A8478", -- Using gray0 from the palette
-		-- 	green = "#A7C080",
-		-- 	lime = "#A7C080", -- Closest match from the palette (green)
-		-- 	orange = "#E69875",
-		-- 	pink = "#D699B6", -- Closest match from the palette (purple is similar to pink in some schemes)
-		-- 	purple = "#D699B6",
-		-- 	magenta = "#D699B6", -- Closest match from the palette (purple)
-		-- 	red = "#E67E80",
-		-- 	yellow = "#DBBC7F",
-		-- }
+		local mocha = require("catppuccin.palettes").get_palette("mocha")
 
 		local conditions = {
 			buffer_not_empty = function()
@@ -112,8 +42,8 @@ return {
 					-- We are going to use lualine_c an lualine_x as left and
 					-- right section. Both are highlighted by c theme .  So we
 					-- are just setting default looks o statusline
-					normal = { c = { fg = colors.fg, bg = colors.bg } },
-					inactive = { c = { fg = colors.fg, bg = colors.bg } },
+					normal = { c = { fg = mocha.text, bg = mocha.base } },
+					inactive = { c = { fg = mocha.text, bg = mocha.base } },
 				},
 			},
 			sections = {
@@ -183,7 +113,7 @@ return {
 		--   function()
 		--     return "▊"
 		--   end,
-		--   color = { fg = colors.blue }, -- Sets highlighting of component
+		--   color = { fg = mocha.blue }, -- Sets highlighting of component
 		--   padding = { left = 0, right = 1 }, -- We don't need space before this
 		-- })
 
@@ -193,88 +123,56 @@ return {
 			color = function()
 				-- auto change color according to neovims mode
 				local mode_color = {
-					n = colors.red,
-					i = colors.green,
-					v = colors.blue,
-					[""] = colors.blue,
-					V = colors.blue,
-					c = colors.magenta,
-					no = colors.red,
-					s = colors.orange,
-					S = colors.orange,
-					[""] = colors.orange,
-					ic = colors.yellow,
-					R = colors.violet,
-					Rv = colors.violet,
-					cv = colors.red,
-					ce = colors.red,
-					r = colors.cyan,
-					rm = colors.cyan,
-					["r?"] = colors.cyan,
-					["!"] = colors.red,
-					t = colors.red,
+					n = mocha.lavender,
+					i = mocha.green,
+					v = mocha.blue,
+					[""] = mocha.blue,
+					V = mocha.blue,
+					c = mocha.flamingo,
+					no = mocha.red,
+					s = mocha.peach,
+					S = mocha.peach,
+					[""] = mocha.peach,
+					ic = mocha.yellow,
+					R = mocha.mauve,
+					Rv = mocha.mauve,
+					cv = mocha.red,
+					ce = mocha.red,
+					r = mocha.teal,
+					rm = mocha.teal,
+					["r?"] = mocha.teal,
+					["!"] = mocha.red,
+					t = mocha.red,
 				}
-				return { bg = mode_color[vim.fn.mode()], fg = colors.bg, gui = "bold" }
+				return { bg = mode_color[vim.fn.mode()], fg = mocha.base, gui = "bold" }
 			end,
 			padding = { right = 1, left = 1 },
-			-- separator = { left = "", right = "" },
+			separator = { left = "", right = "" },
 		})
-
-		-- ins_left {
-		--   -- filesize component
-		--   'filesize',
-		--   cond = conditions.buffer_not_empty,
-		-- }
-
-		-- ins_left({
-		--   function()
-		--     local icon = "󰈚"
-		--     local path = vim.api.nvim_buf_get_name(stbufnr())
-		--     local name = (path == "" and "Empty") or path:match("([^/\\]+)[/\\]*$")
-		--
-		--     if name ~= "Empty" then
-		--       local devicons_present, devicons = pcall(require, "nvim-web-devicons")
-		--
-		--       if devicons_present then
-		--         local ft_icon = devicons.get_icon(name)
-		--         icon = (ft_icon ~= nil and ft_icon) or icon
-		--       end
-		--     end
-		--
-		--     return { icon, name }
-		--   end,
-		-- })
 
 		ins_left({
 			my_filename,
 			-- cond = conditions.buffer_not_empty,
-			color = { fg = colors.magenta, bg = colors.bg, gui = "bold" },
+			color = { fg = mocha.subtext0, bg = mocha.surface0, gui = "bold" },
+			separator = { right = "" },
 		})
-
-		-- ins_left({
-		--
-		--   function()
-		--     return arrow_statusline.text_for_statusline_with_icons() -- Same, but with an bow and arrow icon ;D
-		--   end,
-		--   color = { fg = colors.aqua }, -- Sets highlighting of component
-		--   -- padding = { left = 0, right = 1 }, -- We don't need space before this
-		-- })
-
 		ins_left({
 			"branch",
 			icon = "",
-			color = { fg = colors.fg, bg = colors.bg, gui = "bold" },
+			color = { fg = mocha.subtext0, bg = mocha.surface1, gui = "bold" },
+
+			separator = { right = "" },
 		})
 
 		ins_left({
 			"diff",
 			-- Is it me or the symbol for modified us really weird
-			-- symbols = { added = " ", modified = " ", removed = " " },
-			symbols = { added = "+", modified = "~", removed = "-" },
+			symbols = { added = " ", modified = " ", removed = " " },
+			-- symbols = { added = "+", modified = "~", removed = "-" },
 			diff_color = {
-				added = { fg = colors.green },
-				modified = { fg = colors.orange },
-				removed = { fg = colors.red },
+				added = { fg = mocha.green },
+				modified = { fg = mocha.peach },
+				removed = { fg = mocha.red },
 			},
 			cond = conditions.hide_in_width,
 		})
@@ -293,17 +191,16 @@ return {
 			-- With spinner
 			-- display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' }},
 			colors = {
-				percentage = colors.cyan,
-				title = colors.cyan,
-				message = colors.cyan,
-				spinner = colors.cyan,
-				lsp_client_name = colors.magenta,
+				percentage = mocha.sky,
+				title = mocha.sky,
+				message = mocha.sky,
+				spinner = mocha.sky,
+				lsp_client_name = mocha.flamingo,
 				use = true,
 			},
 			separators = {
 				component = " ",
 				progress = " | ",
-				message = { pre = "(", post = ")" },
 				percentage = { pre = "", post = "%% " },
 				title = { pre = "", post = ": " },
 				lsp_client_name = { pre = "[", post = "]" },
@@ -322,12 +219,12 @@ return {
 		ins_right({
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
-			symbols = { error = "󰅙 ", warn = " ", info = " ", hint = "󰛨 " },
+			symbols = { error = "󰅙 ", warn = " ", info = " ", hint = " " },
 			diagnostics_color = {
-				color_error = { fg = colors.red },
-				color_warn = { fg = colors.yellow },
-				color_info = { fg = colors.cyan },
-				color_hint = { fg = colors.blue },
+				color_error = { fg = mocha.red },
+				color_warn = { fg = mocha.yellow },
+				color_info = { fg = mocha.sky },
+				color_hint = { fg = mocha.blue },
 			},
 		})
 
@@ -349,7 +246,9 @@ return {
 				return msg
 			end,
 			icon = "",
-			color = { fg = colors.green, bg = colors.bg, gui = "bold" },
+			color = { fg = mocha.subtext0, bg = mocha.surface1, gui = "bold" },
+
+			separator = { left = "" },
 		})
 
 		ins_right({ "fancy_macro" })
@@ -406,13 +305,14 @@ return {
 				local position = math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
 
 				if position <= 5 then
-					return { fg = colors.aqua, gui = "bold", bg = colors.bg }
+					return { fg = mocha.lavender, gui = "bold", bg = mocha.surface0 }
 				elseif position >= 95 then
-					return { fg = colors.red, gui = "bold", bg = colors.bg }
+					return { fg = mocha.red, gui = "bold", bg = mocha.surface0 }
 				else
-					return { fg = colors.purple, bg = colors.bg, gui = "bold" }
+					return { fg = mocha.lavender, bg = mocha.surface0, gui = "bold" }
 				end
 			end,
+			separator = { left = "" },
 		})
 
 		ins_right({
@@ -420,52 +320,52 @@ return {
 			color = function()
 				-- auto change color according to neovims mode
 				local mode_color = {
-					n = colors.red,
-					i = colors.green,
-					v = colors.blue,
-					[""] = colors.blue,
-					V = colors.blue,
-					c = colors.magenta,
-					no = colors.red,
-					s = colors.orange,
-					S = colors.orange,
-					[""] = colors.orange,
-					ic = colors.yellow,
-					R = colors.violet,
-					Rv = colors.violet,
-					cv = colors.red,
-					ce = colors.red,
-					r = colors.cyan,
-					rm = colors.cyan,
-					["r?"] = colors.cyan,
-					["!"] = colors.red,
-					t = colors.red,
+					n = mocha.lavender,
+					i = mocha.green,
+					v = mocha.blue,
+					[""] = mocha.blue,
+					V = mocha.blue,
+					c = mocha.flamingo,
+					no = mocha.red,
+					s = mocha.peach,
+					S = mocha.peach,
+					[""] = mocha.peach,
+					ic = mocha.yellow,
+					R = mocha.mauve,
+					Rv = mocha.mauve,
+					cv = mocha.red,
+					ce = mocha.red,
+					r = mocha.sky,
+					rm = mocha.sky,
+					["r?"] = mocha.sky,
+					["!"] = mocha.red,
+					t = mocha.red,
 				}
-				return { bg = mode_color[vim.fn.mode()], fg = colors.bg, gui = "bold" }
+				return { bg = mode_color[vim.fn.mode()], fg = mocha.base, gui = "bold" }
 			end,
 			-- padding = { right = 1, left = 1 },
-			-- separator = { left = "", right = "" },
+			separator = { left = "", right = "" },
 		})
 		-- Add components to right sections
 		-- ins_right {
 		--   'o:encoding', -- option component same as &encoding in viml
 		--   fmt = string.upper, -- I'm not sure why it's upper case either ;)
 		--   cond = conditions.hide_in_width,
-		--   color = { fg = colors.green, gui = 'bold' },
+		--   color = { fg = mocha.green, gui = 'bold' },
 		-- }
 
 		-- ins_right {
 		--   'fileformat',
 		--   fmt = string.upper,
 		--   icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-		--   color = { fg = colors.green, gui = 'bold' },
+		--   color = { fg = mocha.green, gui = 'bold' },
 		-- }
 
 		-- ins_right({
 		--   function()
 		--     return "▊"
 		--   end,
-		--   color = { fg = colors.blue },
+		--   color = { fg = mocha.blue },
 		--   padding = { left = 1 },
 		-- })
 
