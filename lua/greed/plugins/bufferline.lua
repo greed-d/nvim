@@ -1,25 +1,26 @@
 return {
 	"akinsho/bufferline.nvim",
 	event = "BufRead",
-	enabled = false,
+	enabled = true,
 	version = "*",
 	dependencies = "DaikyXendo/nvim-material-icon",
 
 	config = function()
 		require("bufferline").setup({
 			options = {
-				-- separator_style = 'slant',
+				separator_style = "thick",
+				-- separator_style = "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
 				diagnostics = "nvim_lsp",
 				always_show_bufferline = true,
-				diagnostics_indicator = function(_, _, diag)
-					local icons = {
-						Error = " ",
-						Warn = " ",
-					}
-					local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-						.. (diag.warning and icons.Warn .. diag.warning or "")
-					return vim.trim(ret)
-				end,
+				-- diagnostics_indicator = function(_, _, diag)
+				-- 	local icons = {
+				-- 		Error = " ",
+				-- 		Warn = " ",
+				-- 	}
+				-- 	local ret = (diag.error and icons.Error .. diag.error .. " " or "")
+				-- 		.. (diag.warning and icons.Warn .. diag.warning or "")
+				-- 	return vim.trim(ret)
+				-- end,
 				offsets = {
 					{
 						filetype = "neo-tree",

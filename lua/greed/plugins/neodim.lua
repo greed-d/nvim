@@ -8,7 +8,7 @@ return {
 			blend_color = nil,
 			hide = {
 				underline = true,
-				virtual_text = true,
+				virtual_text = false,
 				signs = true,
 			},
 			regex = {

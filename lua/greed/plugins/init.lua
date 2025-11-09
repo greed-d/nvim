@@ -137,4 +137,10 @@ return {
 			},
 		},
 	},
+	{
+		dir = "~/Hobby/present.nvim/",
+		config = function()
+			require("present")
+		end,
+	},
 }
