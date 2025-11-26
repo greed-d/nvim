@@ -1,6 +1,6 @@
 local blink = require("blink.cmp")
 return {
-	cmd = { "qmlls6" },
+	cmd = { "qmlls" },
 	filetypes = { "qml" },
 	root_markers = {
 		"pyproject.toml",

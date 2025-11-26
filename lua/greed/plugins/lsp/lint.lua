@@ -10,6 +10,7 @@ return {
 				-- python = { "flake8" },
 				python = { "ruff" },
 				html = { "djlint" },
+				go = { "golangcilint" },
 			}
 
 			-- You can disable the default linters by setting their filetypes to nil:

@@ -41,6 +41,7 @@ return {
 			usePlaceholders = true,
 			gofumpt = true,
 			staticcheck = true,
+			gofumpt = true,
 			analyses = {
 				unusedparams = true,
 			},

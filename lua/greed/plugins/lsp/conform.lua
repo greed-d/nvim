@@ -45,7 +45,7 @@ return {
 				http = { "kulala-fmt" },
 				sh = { "shellharden" },
 				-- kdl = { "kdlfmt" },
-				go = { "gofmt" },
+				go = { "gofumt", "goimports", "goimports-revisor" },
 				-- Conform can also run multiple formatters sequentially
 
 				-- python = { "isort", "black" },

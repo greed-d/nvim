@@ -51,6 +51,7 @@ return {
 	{
 		"vyfor/cord.nvim",
 		build = ":Cord update",
+		debug = true,
 		-- opts = {}
 	},
 	{
