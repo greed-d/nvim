@@ -1,3 +1,5 @@
+require('mini.pick').setup({})
+
 map("n", "<leader>sf", "<cmd>Pick files<CR>")
 map("n", '<leader>s/', '<Cmd>Pick history scope="/"<CR>')
 map("n", '<leader>s:', '<Cmd>Pick history scope=":"<CR>')
@@ -7,7 +9,6 @@ map("n", '<leader>sc', '<Cmd>Pick git_commits<CR>')
 map("n", '<leader>sC', '<Cmd>Pick git_commits path="%"<CR>')
 map("n", '<leader>sd', '<Cmd>Pick diagnostic scope="all"<CR>')
 map("n", '<leader>sD', '<Cmd>Pick diagnostic scope="current"<CR>')
-map("n", '<leader>sf', '<Cmd>Pick files<CR>')
 map("n", '<leader>sg', '<Cmd>Pick grep_live<CR>')
 map("n", '<leader>sw', '<Cmd>Pick grep pattern="<cword>"<CR>')
 map("n", '<leader>sh', '<cmd>lua MiniPick.builtin.help({default_split = "vertical"})<CR>')

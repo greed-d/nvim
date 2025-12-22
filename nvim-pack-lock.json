@@ -16,6 +16,10 @@
       "rev": "ad7146a",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "mini.nvim": {
+      "rev": "6acb626",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
     "neo-tree.nvim": {
       "rev": "f3df514",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim",

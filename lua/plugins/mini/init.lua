@@ -5,17 +5,13 @@ vim.pack.add {
 require('mini.comment').setup({})
 require('mini.tabline').setup({})
 require('mini.pairs').setup({})
-require('mini.pick').setup({})
+require('mini.git').setup({})
+require('mini.diff').setup({})
+
+
+require('plugins.mini.key_clue')
 require('plugins.mini.pick')
+require('plugins.mini.surround')
+require('plugins.mini.mini_ai')
+require('plugins.mini.trailspace')
 
-require('mini.surround').setup(
-  require('plugins.mini.surround')
-)
-
-require('mini.ai').setup(
-  require('plugins.mini.mini_ai')
-)
-
-require('mini.trailspace').setup(
-  require('plugins.mini.trailspace')
-)
