@@ -1,4 +1,4 @@
-return {
+require('mini.surround').setup({
   -- Add custom surroundings to be used on top of builtin ones. For more
   -- information with examples, see `:h MiniSurround.config`.
   custom_surroundings = nil,
@@ -39,5 +39,4 @@ return {
 
   -- Whether to disable showing non-error feedback
   silent = false,
-}
-
+})
