@@ -1,12 +1,16 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "40380e7",
-      "src": "https://github.com/saghen/blink.cmp"
+      "rev": "b137f63",
+      "src": "https://github.com/Saghen/blink.cmp"
     },
     "gitsigns.nvim": {
       "rev": "20ad441",
       "src": "https://www.github.com/lewis6991/gitsigns.nvim"
+    },
+    "lazydev.nvim": {
+      "rev": "5231c62",
+      "src": "https://www.github.com/folke/lazydev.nvim"
     },
     "mason-tool-installer.nvim": {
       "rev": "517ef59",
@@ -48,6 +52,10 @@
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "fe7cfe9",
+      "src": "https://github.com/folke/snacks.nvim"
     }
   }
 }
