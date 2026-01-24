@@ -1,0 +1,43 @@
+vim.pack.add {
+  { src = "https://github.com/folke/snacks.nvim" }
+}
+require('snacks').setup({
+  dashboard = { enabled = false },
+  indent = { enabled = false },
+  picker = require('plugins.snacks.picker'),
+  terminal = require("plugins.snacks.terminal"),
+  statuscolumn = { enabled = false },
+  notifier = {
+    enabled = true,
+    top_down = false,
+    margin = { top = 0, right = 0, bottom = 1 },
+  },
+
+  image = { enabled = false },
+  git = { enabled = false },
+  gitbrowse = { enabled = false },
+  bigfile = { enabled = true },
+  -- explorer = { enabled = true },
+  input = { enabled = true },
+  quickfile = { enabled = false },
+  scope = { enabled = false },
+  words = { enabled = false },
+  bufdelete = { enabled = false },
+  scroll = { enabled = true },
+  dim = { enabled = false },
+})
+-- Snacks Picker Keymaps
+map({ "n", "x" }, "<leader>sw", function() Snacks.picker.grep_word() end, { desc = "Visual selection or word" })
+map("n", "<leader>sg", function() Snacks.picker.grep() end, { desc = "Grep" })
+map("n", "<leader>sb", function() Snacks.picker.buffers() end, { desc = "Buffers" })
+map("n", "<leader>sn", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, { desc = "Find Config File" })
+map("n", "<leader>ss", function() Snacks.picker.pickers() end, { desc = "Pick Pickers" })
+map("n", "<leader>sf", function() Snacks.picker.files() end, { desc = "Pick Pickers" })
+map("n", "<leader>sh", function() Snacks.picker.help() end, { desc = "Search Help Pages" })
+map("n", "<leader>sH", function() Snacks.picker.highlights() end, { desc = "Highlights" })
+map("n", "<leader>sk", function() Snacks.picker.keymaps() end, { desc = "Search Keymaps" })
+map("n", "<leader>s.", function() Snacks.picker.recent() end, { desc = "Recent" })
+map("n", "<leader>sc", function() Snacks.picker.colorschemes() end, { desc = "Colorschemes" })
+map("n", "<leader>sp", function() Snacks.picker.projects() end, { desc = "Projects" })
+map("n", "<leader>s/", function() Snacks.picker.grep({ buffers = true }) end, { desc = "[S]earch [/] in Open Files" })
+map({ "n", "t" }, "<M-i>", function() Snacks.terminal() end, { desc = "Toggle Terminal" })
