@@ -4,6 +4,10 @@
       "rev": "b137f63",
       "src": "https://github.com/Saghen/blink.cmp"
     },
+    "conform.nvim": {
+      "rev": "c2526f1",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
     "gitsigns.nvim": {
       "rev": "20ad441",
       "src": "https://www.github.com/lewis6991/gitsigns.nvim"
@@ -11,6 +15,10 @@
     "lazydev.nvim": {
       "rev": "5231c62",
       "src": "https://www.github.com/folke/lazydev.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "47f91c4",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason-tool-installer.nvim": {
       "rev": "517ef59",
@@ -40,6 +48,10 @@
     "nvim-autopairs": {
       "rev": "7a2c97c",
       "src": "https://github.com/windwp/nvim-autopairs"
+    },
+    "nvim-treesitter": {
+      "rev": "4967fa48",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
       "rev": "8dcb311",
