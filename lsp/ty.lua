@@ -1,15 +1,13 @@
 local blink = require("blink.cmp")
 return {
-	cmd = { "basedpyright-langserver", "--stdio" },
+	cmd = { { "ty", "server" } },
 	filetypes = { "python" },
 	root_markers = {
 		"pyproject.toml",
 		".git",
 	},
 	settings = {
-		basedpyright = {
-			typeCheckingMode = "basic",
-		},
+		ty = {},
 	},
 	capabilities = vim.tbl_deep_extend(
 		"force",
