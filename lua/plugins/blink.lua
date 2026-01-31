@@ -22,33 +22,37 @@
 -- vim.api.nvim_create_autocmd('PackChanged', { callback = hooks })
 
 -- 1. Define the build logic using the PackChanged event
-vim.api.nvim_create_autocmd('PackChanged', {
-  group = vim.api.nvim_create_augroup('MyVimPackHooks', { clear = true }),
-  callback = function(ev)
-    -- ev.data contains: spec (name, src), kind ('install', 'update', 'deleted'), path
-    local plugin_name = ev.data.spec.name
+vim.api.nvim_create_autocmd("PackChanged", {
+	group = vim.api.nvim_create_augroup("MyVimPackHooks", { clear = true }),
+	callback = function(ev)
+		-- ev.data contains: spec (name, src), kind ('install', 'update', 'deleted'), path
+		local plugin_name = ev.data.spec.name
 
-    if plugin_name == 'blink.cmp' and (ev.data.kind == 'install' or ev.data.kind == 'update') then
-      print("Building blink.cmp...")
+		if plugin_name == "blink.cmp" and (ev.data.kind == "install" or ev.data.kind == "update") then
+			print("Building blink.cmp...")
 
-      -- Use vim.system to run the build command asynchronously
-      vim.system({ 'cargo', 'build', '--release' }, { cwd = ev.data.path }, function(obj)
-        if obj.code == 0 then
-          vim.schedule(function() print("blink.cmp built successfully!") end)
-        else
-          vim.schedule(function() print("Error building blink.cmp: " .. obj.stderr) end)
-        end
-      end)
-    end
-  end,
+			-- Use vim.system to run the build command asynchronously
+			vim.system({ "cargo", "build", "--release" }, { cwd = ev.data.path }, function(obj)
+				if obj.code == 0 then
+					vim.schedule(function()
+						print("blink.cmp built successfully!")
+					end)
+				else
+					vim.schedule(function()
+						print("Error building blink.cmp: " .. obj.stderr)
+					end)
+				end
+			end)
+		end
+	end,
 })
 
 -- 2. Add the plugin
 vim.pack.add({
-  {
-    src = 'https://github.com/Saghen/blink.cmp',
-    -- version = 'v1.*', -- Use '*' to track tags/releases
-  }
+	{
+		src = "https://github.com/Saghen/blink.cmp",
+		-- version = 'v1.*', -- Use '*' to track tags/releases
+	},
 })
 -- vim.pack.add { { src = 'https://github.com/saghen/blink.cmp', version = 'main' } }
 
@@ -106,72 +110,70 @@ vim.pack.add({
 -- 		},
 -- })
 
-require('blink.cmp').setup({
+require("blink.cmp").setup({
 
-  cmdline = {
-    enabled = false,
-  },
+	cmdline = {
+		enabled = false,
+	},
 
-  fuzzy = {
-    implementation = 'prefer_rust',
-  },
+	fuzzy = {
+		implementation = "prefer_rust",
+	},
 
-  -- Experimental signature help support
-  signature = {
-    enabled = false,
-  },
-  completion = {
+	-- Experimental signature help support
+	signature = {
+		enabled = false,
+	},
+	completion = {
 
-    ghost_text = { enabled = false },
-    -- signature = { enabled = true },
+		ghost_text = { enabled = false },
+		-- signature = { enabled = true },
 
-    documentation = {
-      auto_show = true,
-      auto_show_delay_ms = 100,
-      window = {
-        -- border = "rounded",
-        winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpdoccursorline,search:none",
-      },
-    },
+		documentation = {
+			auto_show = true,
+			auto_show_delay_ms = 100,
+			window = {
+				-- border = "rounded",
+				winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpdoccursorline,search:none",
+			},
+		},
 
-    menu = {
-      -- border = "rounded",
-      draw = {
-        columns = {
-          { "label", gap = 2,       "kind_icon" },
-          { gap = 2, "source_name", "label_description" },
-        },
-      },
-      winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpmenuselection,search:none",
-    },
-    accept = {
-      auto_brackets = {
-        enabled = true,
-      },
-    },
-  },
+		menu = {
+			-- border = "rounded",
+			draw = {
+				columns = {
+					{ "label", gap = 2, "kind_icon" },
+					{ gap = 2, "source_name", "label_description" },
+				},
+			},
+			winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpmenuselection,search:none",
+		},
+		accept = {
+			auto_brackets = {
+				enabled = true,
+			},
+		},
+	},
 
+	-- library = {
+	--   { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+	--   { path = "LazyVim",            words = { "LazyVim" } },
+	--   { path = "snacks.nvim",        words = { "Snacks" } },
+	--   { path = "lazy.nvim",          words = { "LazyVim" } },
+	-- },
 
-  library = {
-    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-    { path = "LazyVim",            words = { "LazyVim" } },
-    { path = "snacks.nvim",        words = { "Snacks" } },
-    { path = "lazy.nvim",          words = { "LazyVim" } },
-  },
+	sources = {
+		-- add lazydev to your completion providers
+		default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+		providers = {
+			lazydev = {
+				name = "LazyDev",
+				module = "lazydev.integrations.blink",
+				-- make lazydev completions top priority (see `:h blink.cmp`)
+				score_offset = 100,
+			},
 
-  sources = {
-    -- add lazydev to your completion providers
-    default = { "lazydev", "lsp", "path", "snippets", "buffer" },
-    providers = {
-      lazydev = {
-        name = "LazyDev",
-        module = "lazydev.integrations.blink",
-        -- make lazydev completions top priority (see `:h blink.cmp`)
-        score_offset = 100,
-      },
-
-
-      dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-    },
-  },
+			dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+		},
+	},
 })
