@@ -1,5 +1,8 @@
 vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
+
+	-- Dependencies :
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 })
 
 require("mini.comment").setup({})
