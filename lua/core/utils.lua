@@ -55,18 +55,17 @@ vim.keymap.set("n", "<leader>gd", function()
 	open(vim.fn.getcwd(), path())
 end, { desc = "Open fugitive in floating window" })
 
-
 local function map(modes, lhs, rhs, opts)
-  -- default options (you can tweak as needed)
-  local options = { silent = true, noremap = true }
+	-- default options (you can tweak as needed)
+	local options = { silent = true, noremap = true }
 
-  -- merge opts into default options
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
+	-- merge opts into default options
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
 
-  -- call keymap.set
-  vim.keymap.set(modes, lhs, rhs, options)
+	-- call keymap.set
+	vim.keymap.set(modes, lhs, rhs, options)
 end
 
 -- optionally make it global/globalish

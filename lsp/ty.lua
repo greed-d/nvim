@@ -1,12 +1,10 @@
 local ok, blink = pcall(require, "blink.cmp")
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 if ok then
 	capabilities = blink.get_lsp_capabilities(capabilities)
 end
--- local blink = require("blink.cmp")
 return {
-	cmd = { { "ty", "server" } },
+	cmd = { "ty", "server" },
 	filetypes = { "python" },
 	root_markers = {
 		"pyproject.toml",

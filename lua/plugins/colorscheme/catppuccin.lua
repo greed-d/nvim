@@ -1,10 +1,10 @@
-vim.pack.add {
-  { src = 'https://github.com/catppuccin/nvim' },
-}
+vim.pack.add({
+	{ src = "https://github.com/catppuccin/nvim" },
+})
 
-vim.cmd('colorscheme catppuccin-mocha')
+vim.cmd("colorscheme catppuccin-mocha")
 local function set_highlight(group, opts)
-  vim.api.nvim_set_hl(0, group, opts)
+	vim.api.nvim_set_hl(0, group, opts)
 end
 
 local mocha = require("catppuccin.palettes").get_palette("mocha")
@@ -21,6 +21,7 @@ set_highlight("SnacksPickerInputBorder", { bg = mocha.base, fg = mocha.base })
 set_highlight("SnacksPickerInputSearch", { bg = mocha.red, fg = mocha.base })
 set_highlight("SnacksPickerInput", { bg = mocha.base })
 set_highlight("BlinkCmpMenu", { bg = "#191828" })
-set_highlight("BlinkCmpDoc", { bg = "#252434" })
+set_highlight("LineNr", { fg = "#45475B" })
+set_highlight("CursorLineNr", { fg = "#B4BEFF" })
 -- set_highlight("BlinkCmpMenuBorder", { fg = "#191828", bg = "#191828" })
 set_highlight("BlinkCmpDocBorder", { fg = "#252434", bg = "#252434" })

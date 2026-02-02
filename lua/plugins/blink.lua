@@ -118,6 +118,7 @@ require("blink.cmp").setup({
 
 	fuzzy = {
 		implementation = "prefer_rust",
+		-- implementation = "lua",
 	},
 
 	-- Experimental signature help support
