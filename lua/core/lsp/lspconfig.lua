@@ -59,7 +59,7 @@ local function restart_lsp(bufnr)
 		clients = vim.lsp.get_clients({ bufnr = bufnr })
 	else
 		---@diagnostic disable-next-line: deprecated
-		clients = vim.lsp.get_active_clients({ bufnr = bufnr })
+		clients = vim.lsp.get_clients({ bufnr = bufnr })
 	end
 
 	for _, client in ipairs(clients) do
@@ -78,7 +78,7 @@ end, {})
 local function lsp_status()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local clients = vim.lsp.get_clients and vim.lsp.get_clients({ bufnr = bufnr })
-		or vim.lsp.get_active_clients({ bufnr = bufnr })
+		or vim.lsp.get_clients({ bufnr = bufnr })
 
 	if #clients == 0 then
 		print("󰅚 No LSP clients attached")
@@ -128,7 +128,7 @@ vim.api.nvim_create_user_command("LspStatus", lsp_status, { desc = "Show detaile
 local function check_lsp_capabilities()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local clients = vim.lsp.get_clients and vim.lsp.get_clients({ bufnr = bufnr })
-		or vim.lsp.get_active_clients({ bufnr = bufnr })
+		or vim.lsp.get_clients({ bufnr = bufnr })
 
 	if #clients == 0 then
 		print("No LSP clients attached")
@@ -194,7 +194,7 @@ vim.api.nvim_create_user_command("LspDiagnostics", lsp_diagnostics_info, { desc 
 local function lsp_info()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local clients = vim.lsp.get_clients and vim.lsp.get_clients({ bufnr = bufnr })
-		or vim.lsp.get_active_clients({ bufnr = bufnr })
+		or vim.lsp.get_clients({ bufnr = bufnr })
 
 	print("═══════════════════════════════════")
 	print("           LSP INFORMATION          ")
@@ -308,7 +308,7 @@ vim.api.nvim_create_user_command("LspInfo", lsp_info, { desc = "Show comprehensi
 local function lsp_status_short()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local clients = vim.lsp.get_clients and vim.lsp.get_clients({ bufnr = bufnr })
-		or vim.lsp.get_active_clients({ bufnr = bufnr })
+		or vim.lsp.get_clients({ bufnr = bufnr })
 
 	if #clients == 0 then
 		return "" -- Return empty string when no LSP
