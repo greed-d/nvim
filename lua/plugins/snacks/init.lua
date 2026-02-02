@@ -6,7 +6,7 @@ require("snacks").setup({
 	indent = { enabled = true },
 	picker = require("plugins.snacks.picker"),
 	terminal = require("plugins.snacks.terminal"),
-	statuscolumn = { enabled = false },
+	statuscolumn = { enabled = true },
 	notifier = {
 		enabled = true,
 		top_down = false,
@@ -110,3 +110,16 @@ end, { desc = "LSP Symbols" })
 map("n", "<leader>ws", function()
 	Snacks.picker.lsp_workspace_symbols()
 end, { desc = "LSP Workspace Symbols" })
+
+-- Notifications
+map("n", "<leader>na", function()
+	Snacks.notifier.show_history()
+end, { desc = "Notification History" })
+
+map("n", "<leader>nh", function()
+	Snacks.picker.notifications()
+end, { desc = "Notification History" })
+
+map("n", "<leader>nd", function()
+	Snacks.notifier.hide()
+end, { desc = "Dismiss All Notifications" })
