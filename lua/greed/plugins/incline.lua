@@ -45,7 +45,6 @@ return {
 
 						if #label > 0 then
 							table.insert(label, 1, { "󰛢 ", guifg = "#61AfEf" })
-							table.insert(label, { "| " })
 						end
 						return label
 					end
@@ -66,7 +65,6 @@ return {
 						{ "", guifg = "#0c0e14" },
 						{
 							{ get_harpoon_items() },
-							{ get_file_name() },
 							guibg = "#0c0e14",
 						},
 						{ "", guifg = "#0c0e14" },

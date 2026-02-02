@@ -1,6 +1,9 @@
 return {
 	enabled = true,
 	ui_select = true,
+	-- hidden = true,
+	-- ignored = true,
+	exclude = {".git", "node_modules", ".venv"},
 	formatters = {
 		file = {
 			filename_first = true,

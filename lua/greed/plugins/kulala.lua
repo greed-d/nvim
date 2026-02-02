@@ -1,5 +1,7 @@
 return {
 	"mistweaverco/kulala.nvim",
+	branch = "debug_fmt",
+	enabled = true,
 	keys = {
 		{
 			"<leader>rs",
@@ -30,11 +32,29 @@ return {
 			end,
 			desc = "replay last request",
 		},
+		{
+			"<leader>rp",
+			function()
+				require("kulala").import("postman")
+			end,
+			desc = "Import from postman",
+		},
+		{
+			"<leader>re",
+			function()
+				require("kulala").set_selected_env()
+			end,
+			desc = "Select environment"
+		},
 	},
 	ft = { "http", "rest" },
 	opts = {
 		global_keymaps = false,
 		global_keymaps_prefix = "<leader>R",
 		kulala_keymaps_prefix = "",
+		debug = false,
+		ui = {
+			max_response_size = 1048576
+		}
 	},
 }

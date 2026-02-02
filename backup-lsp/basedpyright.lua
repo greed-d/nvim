@@ -1,6 +1,6 @@
 local blink = require("blink.cmp")
 return {
-	cmd = { "basedpyright-langserver", "--stdio" },
+	cmd = { "basedpyright", "--stdio" },
 	filetypes = { "python" },
 	root_markers = {
 		"pyproject.toml",

@@ -9,10 +9,11 @@ return {
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
+		cmdline = { enabled = false },
 		completion = {
 
 			ghost_text = { enabled = false },
-			signature = { enabled = true },
+			signature = { enabled = false },
 
 			documentation = {
 				auto_show = true,

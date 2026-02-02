@@ -5,6 +5,7 @@ return {
 		"neovim/nvim-lspconfig",
 		"saghen/blink.cmp",
 	},
+	cmd = "Mason",
 	keys = {
 		{
 			"<leader>cm",

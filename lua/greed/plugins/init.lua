@@ -74,47 +74,21 @@ return {
 	-- 		picker_integration = true,
 	-- 	},
 	-- },
-	{
-		"mistweaverco/kulala.nvim",
-		keys = {
-			{
-				"<leader>rs",
-				function()
-					require("kulala").run()
-				end,
-				desc = " Run current request ",
-			},
 
-			{
-				"<leader>ra",
-				function()
-					require("kulala").run_all()
-				end,
-				desc = " Run all request ",
-			},
-			{
-				"<leader>rb",
-				function()
-					require("kulala").scratchpad()
-				end,
-				desc = "Open kualala scratchpad",
-			},
-			{
-				"<leader>rr",
-				function()
-					require("kulala").replay()
-				end,
-				desc = "replay last request",
-			},
-		},
-		ft = { "http", "rest" },
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
 		opts = {
-			global_keymaps = false,
-			global_keymaps_prefix = "<leader>R",
-			kulala_keymaps_prefix = "",
+			-- cfg options
 		},
 	},
-
+	{
+		"karb94/neoscroll.nvim",
+		opts = {
+			duration_multiplier = 0.5,
+			easing = "sine",
+		},
+	},
 	{
 		"MagicDuck/grug-far.nvim",
 		opts = { headerMaxWidth = 80 },
@@ -136,5 +110,19 @@ return {
 				desc = "Search and Replace",
 			},
 		},
+	},
+
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			"DaikyXendo/nvim-material-icon",
+			"greed-d/lualine-so-fancy.nvim",
+			"arkav/lualine-lsp-progress",
+		},
+
+		event = "VeryLazy",
+		config = function()
+			require("greed.plugins.statusline.lualine")
+		end,
 	},
 }

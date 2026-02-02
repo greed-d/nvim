@@ -128,20 +128,20 @@ return {
 		end,
 		desc = "Find Config File",
 	},
-	-- {
-	-- 	"<leader>sf",
-	-- 	function()
-	-- 		Snacks.picker.files()
-	-- 	end,
-	-- 	desc = "Find Files",
-	-- },
 	{
 		"<leader>sf",
 		function()
-			require("greed.plugins.snacks.fff").fff()
+			Snacks.picker.files()
 		end,
-		desc = "FFF",
+		desc = "Find Files",
 	},
+	-- {
+	-- 	"<leader>sf",
+	-- 	function()
+	-- 		require("greed.plugins.snacks.fff").fff()
+	-- 	end,
+	-- 	desc = "FFF",
+	-- },
 
 	{
 		"<leader>ss",
@@ -211,7 +211,7 @@ return {
 	{
 		"<leader>sT",
 		function()
-			Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
+			Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME", "BUG" } })
 		end,
 		desc = "Todo/Fix/Fixme",
 	},
@@ -268,11 +268,11 @@ return {
 		end,
 		desc = "LSP Workspace Symbols",
 	},
-	{ --
-		"<leader>sf",
-		function()
-			require("greed.plugins.snacks.fff").fff()
-		end,
-		{ desc = "FFF" },
-	},
+	-- { --
+	-- 	"<leader>sf",
+	-- 	function()
+	-- 		require("greed.plugins.snacks.fff").fff()
+	-- 	end,
+	-- 	{ desc = "FFF" },
+	-- },
 }

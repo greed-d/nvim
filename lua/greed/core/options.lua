@@ -59,10 +59,13 @@ o.list = true
 o.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 o.showmode = false
 o.laststatus = 3
+o.autoread = true
 
 -- o.colorcolumn = "80"
 
 o.whichwrap:append("<>[]hl")
+
+o.shell = "/bin/fish"
 
 -- [[ Mouse Support ]]
 o.mouse = "a"
@@ -72,3 +75,7 @@ vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+-- [[ local project config helper ]]
+vim.o.exrc = true
+vim.o.secure = true
