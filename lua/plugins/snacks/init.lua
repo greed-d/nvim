@@ -73,3 +73,40 @@ end, { desc = "Toggle Terminal" })
 map("n", "<leader>lg", function()
 	Snacks.lazygit()
 end, { desc = "[S]earch [/] in Open Files" })
+
+map("n", "<leader>bk", function()
+	Snacks.bufdelete()
+end, { desc = "[B]uffer [K]ill" })
+map("n", "<leader>bK", function()
+	Snacks.bufdelete.all()
+end, { desc = "[B]uffer [K]ill All" })
+
+-- LSP: Goto & navigation
+map("n", "gd", function()
+	Snacks.picker.lsp_definitions()
+end, { desc = "Goto Definition" })
+
+map("n", "gD", function()
+	Snacks.picker.lsp_declarations()
+end, { desc = "Goto Declaration" })
+
+map("n", "gr", function()
+	Snacks.picker.lsp_references()
+end, { desc = "References", nowait = true })
+
+map("n", "gI", function()
+	Snacks.picker.lsp_implementations()
+end, { desc = "Goto Implementation" })
+
+map("n", "gy", function()
+	Snacks.picker.lsp_type_definitions()
+end, { desc = "Goto Type Definition" })
+
+-- LSP: Symbols
+map("n", "<leader>ds", function()
+	Snacks.picker.lsp_symbols()
+end, { desc = "LSP Symbols" })
+
+map("n", "<leader>ws", function()
+	Snacks.picker.lsp_workspace_symbols()
+end, { desc = "LSP Workspace Symbols" })
