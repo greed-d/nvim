@@ -8,7 +8,7 @@ vim.pack.add({
 require("mini.comment").setup({})
 require("mini.pairs").setup({})
 require("mini.git").setup({})
-require("mini.diff").setup({})
+-- require("mini.diff").setup({})
 require("mini.cmdline").setup({})
 require("mini.starter").setup({})
 require("mini.icons").setup({})

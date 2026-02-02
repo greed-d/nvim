@@ -22,6 +22,7 @@ vim.lsp.enable(lsp_files)
 
 vim.diagnostic.config({
 
+	underline = true,
 	virtual_text = {
 
 		spacing = 4,
