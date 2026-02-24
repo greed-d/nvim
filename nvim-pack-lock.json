@@ -4,6 +4,10 @@
       "rev": "fab799d086fd63fa5b389007f63767b23885ebf8",
       "src": "https://github.com/Saghen/blink.cmp"
     },
+    "codediff.nvim": {
+      "rev": "783258e587bd1bc2bba4d617d648e7424d594107",
+      "src": "https://github.com/esmuellert/codediff.nvim"
+    },
     "conform.nvim": {
       "rev": "c2526f1cde528a66e086ab1668e996d162c75f4f",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -11,6 +15,15 @@
     "gitsigns.nvim": {
       "rev": "abf82a65f185bd54adc0679f74b7d6e1ada690c9",
       "src": "https://www.github.com/lewis6991/gitsigns.nvim"
+    },
+    "harpoon": {
+      "rev": "87b1a3506211538f460786c23f98ec63ad9af4e5",
+      "src": "https://github.com/ThePrimeagen/harpoon",
+      "version": "'harpoon2'"
+    },
+    "kulala.nvim": {
+      "rev": "6656c9d332735ca6a27725e0fb45a1715c4372d9",
+      "src": "https://github.com/mistweaverco/kulala.nvim"
     },
     "lazydev.nvim": {
       "rev": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d",
@@ -37,6 +50,10 @@
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim",
       "version": "3.0.0 - 4.0.0"
     },
+    "neogit": {
+      "rev": "0ea6b87ae19e8e5a235c682f8db1305774824f9b",
+      "src": "https://github.com/NeogitOrg/neogit"
+    },
     "nui.nvim": {
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",
       "src": "https://github.com/MunifTanjim/nui.nvim"
@@ -48,6 +65,10 @@
     "nvim-treesitter": {
       "rev": "4967fa48b0fe7a7f92cee546c76bb4bb61bb14d5",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-treesitter-context": {
+      "rev": "64dd4cf3f6fd0ab17622c5ce15c91fc539c3f24a",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-treesitter-textobjects": {
       "rev": "a0e182ae21fda68c59d1f36c9ed45600aef50311",
@@ -68,6 +89,10 @@
     "snacks.nvim": {
       "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
       "src": "https://github.com/folke/snacks.nvim"
+    },
+    "tabscope.nvim": {
+      "rev": "cba52d18fbb1171cd92c7baf916e98fb720d6ae0",
+      "src": "https://github.com/backdround/tabscope.nvim"
     }
   }
 }
