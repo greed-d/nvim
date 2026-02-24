@@ -13,34 +13,34 @@ vim.pack.add({
 -- end
 
 require("nvim-treesitter.config").setup({
-	-- ensure_installed = {
-	-- 	"bash",
-	-- 	"diff",
-	-- 	"html",
-	-- 	"lua",
-	-- 	"luadoc",
-	-- 	"markdown",
-	-- 	"markdown_inline",
-	-- 	"query",
-	-- 	"vim",
-	-- 	"vimdoc",
-	-- 	"python",
-	-- },
-	-- incremental_selection = {
-	-- 	enable = true,
-	-- 	keymaps = {
-	-- 		init_selection = "<leader><leader>",
-	-- 		node_incremental = "<leader><leader>",
-	-- 		scope_incremental = "grc",
-	-- 		node_decremental = "grm",
-	-- 	},
-	-- },
-	-- auto_install = true,
-	-- highlight = {
-	-- 	enable = true,
-	-- 	additional_vim_regex_highlighting = { "ruby" },
-	-- },
-	-- indent = { enable = true, disable = { "ruby" } },
+	ensure_installed = {
+		"bash",
+		"diff",
+		"html",
+		"lua",
+		"luadoc",
+		"markdown",
+		"markdown_inline",
+		"query",
+		"vim",
+		"vimdoc",
+		"python",
+	},
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "<leader><leader>",
+			node_incremental = "<leader><leader>",
+			scope_incremental = "grc",
+			node_decremental = "grm",
+		},
+	},
+	auto_install = true,
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = { "ruby" },
+	},
+	indent = { enable = true, disable = { "ruby" } },
 })
 
 vim.api.nvim_create_autocmd("FileType", {
