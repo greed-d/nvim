@@ -157,13 +157,6 @@ ins_left({
 })
 
 ins_left({
-	"branch",
-	icon = "",
-	condition = conditions.check_git_workspace,
-	color = { fg = colors.violet, gui = "bold" },
-})
-
-ins_left({
 	"diff",
 	-- Is it me or the symbol for modified us really weird
 	-- symbols = { added = " ", modified = "柳 ", removed = " " },
@@ -212,14 +205,20 @@ ins_right({
 	color_warn = colors.yellow,
 	color_info = colors.cyan,
 })
+ins_right({
+	"branch",
+	icon = "",
+	condition = conditions.check_git_workspace,
+	color = { fg = colors.violet, gui = "bold" },
+})
 
 -- Add components to right sections
-ins_right({
-	"o:encoding", -- option component same as &encoding in viml
-	upper = true, -- I'm not sure why it's upper case either ;)
-	condition = conditions.hide_in_width,
-	color = { fg = colors.green, gui = "bold" },
-})
+-- ins_right({
+-- 	"o:encoding", -- option component same as &encoding in viml
+-- 	upper = true, -- I'm not sure why it's upper case either ;)
+-- 	condition = conditions.hide_in_width,
+-- 	color = { fg = colors.green, gui = "bold" },
+-- })
 
 -- 	"fileformat",
 -- 	upper = true,
