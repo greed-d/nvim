@@ -5,4 +5,4 @@ vim.pack.add({
 	"https://github.com/esmuellert/codediff.nvim",
 })
 
-map("n", "<leader>gg", "<cmd>Neogit<cr>")
+map("n", "<leader>gg", "<cmd>Neogit kind=floating<cr>")
