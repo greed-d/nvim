@@ -1,4 +1,4 @@
--- local blink = require("blink.cmp")
+local blink = require("blink.cmp")
 return {
 	cmd = { "vale-ls" },
 	filetypes = { "markdown" },
@@ -12,7 +12,7 @@ return {
 		"force",
 		{},
 		vim.lsp.protocol.make_client_capabilities(),
-		-- blink.get_lsp_capabilities(),
+		blink.get_lsp_capabilities(),
 		{
 			fileOperations = {
 				didRename = true,

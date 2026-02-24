@@ -1,4 +1,4 @@
--- local blink = require("blink.cmp")
+local blink = require("blink.cmp")
 return {
 	cmd = { "clangd" },
 	filetypes = { "cpp", "c" },
@@ -9,7 +9,7 @@ return {
 		"force",
 		{},
 		vim.lsp.protocol.make_client_capabilities(),
-		-- blink.get_lsp_capabilities(),
+		blink.get_lsp_capabilities(),
 		{
 			fileOperations = {
 				didRename = true,
