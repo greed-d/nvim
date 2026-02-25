@@ -58,7 +58,7 @@ require("gitsigns").setup({
 		map("n", "<leader>gS", gitsigns.stage_buffer, { desc = "git [S]tage buffer" })
 		map("n", "<leader>gu", gitsigns.stage_hunk, { desc = "git [u]ndo stage hunk" })
 		map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "git [R]eset buffer" })
-		map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "git [p]review hunk" })
+		map("n", "<leader>gv", gitsigns.preview_hunk, { desc = "git [p]review hunk" })
 		map("n", "<leader>gb", gitsigns.blame_line, { desc = "git [b]lame line" })
 		map("n", "<leader>gd", gitsigns.diffthis, { desc = "git [d]iff against index" })
 		map("n", "<leader>gD", function()
