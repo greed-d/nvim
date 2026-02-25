@@ -52,6 +52,7 @@ o.splitbelow = true
 --
 -- [[ Misc Stuff ]]
 o.updatetime = 250
+o.autoread = true
 o.timeoutlen = 300
 o.cursorline = true
 o.confirm = true
