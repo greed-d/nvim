@@ -1,27 +1,4 @@
--- local hooks = function(ev)
---   -- Use available |event-data|
---   local name, kind = ev.data.spec.name, ev.data.kind
---
---   -- Run build script after plugin's code has changed
---   if name == 'blink.cmp' and (kind == 'install' or kind == 'update') then
---     vim.system({ 'cargo build --release' }, { cwd = ev.data.path })
---   end
---
---   -- If action relies on code from the plugin (like user command or
---   -- Lua code), make sure to explicitly load it first
---   -- if name == 'blink.cmp' and kind == 'update' then
---   --   if not ev.data.active then
---   --     vim.cmd.packadd('blink.cmp')
---   --   end
---   --   vim.cmd('PlugTwoUpdate')
---   --   require('plug2').after_update()
---   -- end
--- end
-
--- If hooks need to run on install, run this before `vim.pack.add()`
--- vim.api.nvim_create_autocmd('PackChanged', { callback = hooks })
-
--- 1. Define the build logic using the PackChanged event
+-- Build blink.cmp manually
 vim.api.nvim_create_autocmd("PackChanged", {
 	group = vim.api.nvim_create_augroup("MyVimPackHooks", { clear = true }),
 	callback = function(ev)
@@ -47,68 +24,12 @@ vim.api.nvim_create_autocmd("PackChanged", {
 	end,
 })
 
--- 2. Add the plugin
 vim.pack.add({
 	{
 		src = "https://github.com/Saghen/blink.cmp",
 		-- version = 'v1.*', -- Use '*' to track tags/releases
 	},
 })
--- vim.pack.add { { src = 'https://github.com/saghen/blink.cmp', version = 'main' } }
-
--- require('blink').setup(
---   {
---
--- 		completion = {
---
--- 			ghost_text = { enabled = false },
--- 			signature = { enabled = true },
---
--- 			documentation = {
--- 				auto_show = true,
--- 				auto_show_delay_ms = 100,
--- 				window = {
--- 					-- border = "rounded",
--- 					winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpdoccursorline,search:none",
--- 				},
--- 			},
---
--- 			menu = {
--- 				-- border = "rounded",
--- 				draw = {
--- 					columns = {
--- 						{ "label", gap = 2, "kind_icon" },
--- 						{ gap = 2, "source_name", "label_description" },
--- 					},
--- 				},
--- 				winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpmenuselection,search:none",
--- 			},
--- 			accept = {
--- 				auto_brackets = {
--- 					enabled = true,
--- 				},
--- 			},
--- 		},
--- 		keymap = {
--- 			["<Tab>"] = {},
--- 			["<S-Tab>"] = {},
--- 			["<C-l>"] = { "snippet_forward", "fallback" },
--- 			["<C-h>"] = { "snippet_backward", "fallback" },
--- 			["<C-b>"] = { "scroll_documentation_up", "fallback" },
--- 			["<C-f>"] = { "scroll_documentation_down", "fallback" },
--- 		},
--- 		sources = {
--- 			default = { "lsp", "path", "snippets", "buffer", "dadbod" },
--- 			providers = {
--- 				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
--- 			},
--- 		},
---
--- 		appearance = {
--- 			use_nvim_cmp_as_default = true,
--- 			nerd_font_variant = "normal",
--- 		},
--- })
 
 require("blink.cmp").setup({
 
