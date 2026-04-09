@@ -1,33 +1,33 @@
 -- Build blink.cmp manually
-vim.api.nvim_create_autocmd("PackChanged", {
-	group = vim.api.nvim_create_augroup("MyVimPackHooks", { clear = true }),
-	callback = function(ev)
-		-- ev.data contains: spec (name, src), kind ('install', 'update', 'deleted'), path
-		local plugin_name = ev.data.spec.name
-
-		if plugin_name == "blink.cmp" and (ev.data.kind == "install" or ev.data.kind == "update") then
-			print("Building blink.cmp...")
-
-			-- Use vim.system to run the build command asynchronously
-			vim.system({ "cargo", "build", "--release" }, { cwd = ev.data.path }, function(obj)
-				if obj.code == 0 then
-					vim.schedule(function()
-						print("blink.cmp built successfully!")
-					end)
-				else
-					vim.schedule(function()
-						print("Error building blink.cmp: " .. obj.stderr)
-					end)
-				end
-			end)
-		end
-	end,
-})
+-- vim.api.nvim_create_autocmd("PackChanged", {
+-- 	group = vim.api.nvim_create_augroup("MyVimPackHooks", { clear = true }),
+-- 	callback = function(ev)
+-- 		-- ev.data contains: spec (name, src), kind ('install', 'update', 'deleted'), path
+-- 		local plugin_name = ev.data.spec.name
+--
+-- 		if plugin_name == "blink.cmp" and (ev.data.kind == "install" or ev.data.kind == "update") then
+-- 			print("Building blink.cmp...")
+--
+-- 			-- Use vim.system to run the build command asynchronously
+-- 			vim.system({ "cargo", "build", "--release" }, { cwd = ev.data.path }, function(obj)
+-- 				if obj.code == 0 then
+-- 					vim.schedule(function()
+-- 						print("blink.cmp built successfully!")
+-- 					end)
+-- 				else
+-- 					vim.schedule(function()
+-- 						print("Error building blink.cmp: " .. obj.stderr)
+-- 					end)
+-- 				end
+-- 			end)
+-- 		end
+-- 	end,
+-- })
 
 vim.pack.add({
 	{
-		src = "https://github.com/Saghen/blink.cmp",
-		-- version = 'v1.*', -- Use '*' to track tags/releases
+		src = "gh:saghen/blink.cmp",
+		version = vim.version.range("1.*"), -- version = 'v1.*', -- Use '*' to track tags/releases
 	},
 })
 
