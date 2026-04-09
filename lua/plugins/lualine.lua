@@ -53,6 +53,15 @@ local config = {
 			inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		},
 	},
+
+	winbar = {
+		lualine_c = {
+			{
+				"navic",
+				color_correction = "dynamic",
+			},
+		},
+	},
 	sections = {
 		-- these are to remove the defaults
 		lualine_a = {},
