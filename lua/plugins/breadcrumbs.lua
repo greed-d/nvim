@@ -1,5 +1,4 @@
 vim.pack.add({
-	{ src = "https://github.com/LunarVim/breadcrumbs.nvim" },
 	"https://github.com/SmiteshP/nvim-navic",
 })
 
@@ -37,5 +36,3 @@ require("nvim-navic").setup({
 		TypeParameter = " ",
 	},
 })
-
-require("breadcrumbs").setup()
