@@ -43,9 +43,9 @@ require("nvim-treesitter.config").setup({
 	indent = { enable = true, disable = { "ruby" } },
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "python", "lua" },
-	callback = function()
-		vim.treesitter.start()
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = { "python", "lua" },
+-- 	callback = function()
+-- 		vim.treesitter.start()
+-- 	end,
+-- })
