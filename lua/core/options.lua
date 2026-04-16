@@ -45,6 +45,7 @@ o.breakindent = true
 
 -- [[ Backspace ]]
 o.backspace = { "start", "eol", "indent" }
+o.fillchars = { eob = " " }
 
 -- [[ Split Settings ]]
 o.splitright = true
