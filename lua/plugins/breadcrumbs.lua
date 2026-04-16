@@ -5,6 +5,7 @@ vim.pack.add({
 require("nvim-navic").setup({
 	lsp = {
 		auto_attach = true,
+		preference = { "ty", "ruff", "lua_ls", "clangd" },
 	},
 
 	icons = {
@@ -35,4 +36,6 @@ require("nvim-navic").setup({
 		Operator = " ",
 		TypeParameter = " ",
 	},
+	highlight = true,
+	click = true,
 })
