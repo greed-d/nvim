@@ -1,29 +1,3 @@
--- Build blink.cmp manually
--- vim.api.nvim_create_autocmd("PackChanged", {
--- 	group = vim.api.nvim_create_augroup("MyVimPackHooks", { clear = true }),
--- 	callback = function(ev)
--- 		-- ev.data contains: spec (name, src), kind ('install', 'update', 'deleted'), path
--- 		local plugin_name = ev.data.spec.name
---
--- 		if plugin_name == "blink.cmp" and (ev.data.kind == "install" or ev.data.kind == "update") then
--- 			print("Building blink.cmp...")
---
--- 			-- Use vim.system to run the build command asynchronously
--- 			vim.system({ "cargo", "build", "--release" }, { cwd = ev.data.path }, function(obj)
--- 				if obj.code == 0 then
--- 					vim.schedule(function()
--- 						print("blink.cmp built successfully!")
--- 					end)
--- 				else
--- 					vim.schedule(function()
--- 						print("Error building blink.cmp: " .. obj.stderr)
--- 					end)
--- 				end
--- 			end)
--- 		end
--- 	end,
--- })
-
 vim.pack.add({
 	{
 		src = "gh:saghen/blink.cmp",
@@ -47,7 +21,6 @@ require("blink.cmp").setup({
 
 	fuzzy = {
 		implementation = "prefer_rust",
-		-- implementation = "lua",
 	},
 
 	-- Experimental signature help support
@@ -63,13 +36,11 @@ require("blink.cmp").setup({
 			auto_show = true,
 			auto_show_delay_ms = 100,
 			window = {
-				-- border = "rounded",
 				winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpdoccursorline,search:none",
 			},
 		},
 
 		menu = {
-			-- border = "rounded",
 			draw = {
 				columns = {
 					{ "label", gap = 2, "kind_icon" },
