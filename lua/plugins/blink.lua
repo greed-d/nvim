@@ -1,6 +1,6 @@
 vim.pack.add({
 	{
-		src = "gh:saghen/blink.cmp",
+		src = "https://github.com/saghen/blink.cmp",
 		version = vim.version.range("1.*"), -- version = 'v1.*', -- Use '*' to track tags/releases
 	},
 })
