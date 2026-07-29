@@ -90,7 +90,7 @@ map("n", "gD", function()
 	Snacks.picker.lsp_declarations()
 end, { desc = "Goto Declaration" })
 
-map("n", "gr", function()
+map("n", "grr", function()
 	Snacks.picker.lsp_references()
 end, { desc = "References", nowait = true })
 

@@ -9,6 +9,7 @@ vim.pack.add({
 -- Author: shadmansaleh
 -- Credit: glepnir
 local lualine = require("lualine")
+local navic = require("nvim-navic")
 
 -- Color table for highlights
 local colors = {
@@ -57,9 +58,24 @@ local config = {
 	winbar = {
 		lualine_c = {
 			{
-				"navic",
-				color_correction = "dynamic",
+				function()
+					return navic.get_location()
+				end,
+				cond = function()
+					return navic.is_available()
+				end,
 			},
+		},
+		-- lualine_c = {
+		-- 	{
+		-- 		"navic",
+		-- 		color_correction = "dynamic",
+		-- 	},
+		-- },
+	},
+	inactive_winbar = {
+		lualine_c = {
+			"hello",
 		},
 	},
 	sections = {
@@ -80,6 +96,7 @@ local config = {
 		lualine_z = {},
 		lualine_c = {},
 		lualine_x = {},
+		winbar = {},
 	},
 }
 
@@ -214,6 +231,7 @@ ins_right({
 	color_warn = colors.yellow,
 	color_info = colors.cyan,
 })
+
 ins_right({
 	"branch",
 	icon = "",
