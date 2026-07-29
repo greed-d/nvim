@@ -25,6 +25,8 @@ require("nvim-treesitter.config").setup({
 		"vim",
 		"vimdoc",
 		"python",
+		"regex",
+		"bash",
 	},
 	incremental_selection = {
 		enable = true,
