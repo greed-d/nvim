@@ -10,7 +10,7 @@
       "src": "https://github.com/LunarVim/breadcrumbs.nvim"
     },
     "codediff.nvim": {
-      "rev": "6b027d4bbc877fc596e8f9b7b51d2624c51cf292",
+      "rev": "dc38f0b8a2ba8cc198cc024f3abe887341788820",
       "src": "https://github.com/esmuellert/codediff.nvim"
     },
     "conform.nvim": {
@@ -55,7 +55,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "946ae64e0ee807ae3c41f382f0114b4ed4915b2c",
+      "rev": "8bf5c57bc82dd590932faa41bfde9fd6d40a9433",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neo-tree.nvim": {
@@ -79,9 +79,13 @@
       "rev": "79e2049a0fdf7ec840f8463fe1d962c94493196b",
       "src": "https://github.com/catppuccin/nvim"
     },
+    "nvim-autopairs": {
+      "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
     "nvim-navic": {
       "rev": "f5eba192f39b453675d115351808bd51276d9de5",
-      "src": "gh:SmiteshP/nvim-navic"
+      "src": "https://www.github.com/SmiteshP/nvim-navic"
     },
     "nvim-notify": {
       "rev": "8701bece920b38ea289b457f902e2ad184131a5d",
@@ -92,7 +96,7 @@
       "src": "https://github.com/alexghergh/nvim-tmux-navigation"
     },
     "nvim-treesitter": {
-      "rev": "61df84986b4b4ec469ee745a182e433d49f8c27e",
+      "rev": "0f32dff7f19476629c77467f887b95e5e2d33509",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-context": {
@@ -118,6 +122,10 @@
     "snacks.nvim": {
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
       "src": "https://github.com/folke/snacks.nvim"
+    },
+    "symbol-usage.nvim": {
+      "rev": "6a449e6b37be61a110606e9a67a7a308774f120f",
+      "src": "https://www.github.com/Wansmer/symbol-usage.nvim"
     },
     "tabscope.nvim": {
       "rev": "cba52d18fbb1171cd92c7baf916e98fb720d6ae0",

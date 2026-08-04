@@ -177,10 +177,32 @@ ins_left({
 -- })
 
 ins_left({
-	"filename",
+	function()
+		local ft = vim.bo.filetype
+
+		if ft == "neo-tree" then
+			return "File Explorer"
+		elseif ft == "snacks_picker" then
+			return "Picker"
+		elseif ft == "oil" then
+			return "Oil"
+		end
+
+		local filename = vim.fn.expand("%:t")
+		if filename == "" then
+			return "Empty"
+		end
+
+		return filename
+	end,
 	condition = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = "bold" },
 })
+-- ins_left({
+-- 	"filename",
+-- 	condition = conditions.buffer_not_empty,
+-- 	color = { fg = colors.magenta, gui = "bold" },
+-- })
 
 ins_left({
 	"diff",
