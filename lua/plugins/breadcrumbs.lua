@@ -39,3 +39,6 @@ require("nvim-navic").setup({
 	highlight = true,
 	click = true,
 })
+
+-- Reserve space for navic even if there is no element to display
+vim.opt.winbar = " "
