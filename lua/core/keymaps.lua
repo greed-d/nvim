@@ -18,8 +18,8 @@ map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc 
 map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- [[ Center Screen on C-d,u ]]
-map("n", "<C-d>", "<C-d>zz", { desc = "bring screen to middle" })
-map("n", "<C-u>", "<C-u>zz", { desc = "bring screen to middle" })
+-- map("n", "<C-d>", "<C-d>zz", { desc = "bring screen to middle" })
+-- map("n", "<C-u>", "<C-u>zz", { desc = "bring screen to middle" })
 
 -- [[ Useful everyday keybinds ]]
 map("x", "p", 'p:let @"=@0<CR>', { silent = true })
@@ -64,15 +64,22 @@ end, { desc = "Quickfix List" })
 
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
+map("n", "qc", vim.cmd.cclose, { desc = "Close Quickfix" })
 
 -- [[ Diagnostics Stuff ]]
 local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
 	severity = severity and vim.diagnostic.severity[severity] or nil
 	return function()
-		go({ severity = severity })
+		vim.diagnostic.jump({ count = next and 1 or -1, severity = severity, float = true })
 	end
 end
+-- local diagnostic_goto = function(next, severity)
+-- 	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+-- 	severity = severity and vim.diagnostic.severity[severity] or nil
+-- 	return function()
+-- 		go({ severity = severity })
+-- 	end
+-- end
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })

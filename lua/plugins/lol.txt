@@ -1,0 +1,26 @@
+Permissions Size User               Date Modified Git Name
+drwxr-xr-x     - deekshit.bhattarai  2 Feb 11:35   -- colorscheme
+drwxr-xr-x     - deekshit.bhattarai  3 Feb 10:01   -- mini
+drwxr-xr-x     - deekshit.bhattarai 22 May 14:53   -- snacks
+.rw-r--r--  2.2k deekshit.bhattarai 28 Aug 11:43   M- blink.lua
+.rw-r--r--   840 deekshit.bhattarai 28 Aug 11:42   -- breadcrumbs.lua
+.rw-r--r--  3.2k deekshit.bhattarai 28 Aug 11:43   N- colorful-menu.lua
+.rw-r--r--   253 deekshit.bhattarai 21 May 10:05   -- cord.lua
+.rw-r--r--   317 deekshit.bhattarai  2 Jun 12:40   -- fastapi.lua
+.rw-r--r--  2.7k deekshit.bhattarai 25 Feb 14:47   -- gitsigns.lua
+.rw-r--r--   959 deekshit.bhattarai 28 Aug 11:43   M- harpoon.lua
+.rw-r--r--   688 deekshit.bhattarai 13 Feb 12:38   -- kulala.lua
+.rw-r--r--   282 deekshit.bhattarai  2 Feb 09:25   -- lazydev.lua
+.rw-r--r--     0 deekshit.bhattarai 28 Aug 12:33   -N lol.txt
+.rw-r--r--  6.5k deekshit.bhattarai 28 Aug 11:42   -- lualine.lua
+.rw-r--r--   370 deekshit.bhattarai 21 May 10:05   -- mason.lua
+.rw-r--r--   569 deekshit.bhattarai 25 Feb 12:23   -- neogit.lua
+.rw-r--r--  2.4k deekshit.bhattarai  2 Feb 11:52   -- neotree.lua
+.rw-r--r--  1.1k deekshit.bhattarai 22 May 15:03   -- noice.lua
+.rw-r--r--   345 deekshit.bhattarai  2 Feb 09:25   -- oil.lua
+.rw-r--r--  1.9k deekshit.bhattarai 30 Jul 16:56   -- symbols.lua
+.rw-r--r--   158 deekshit.bhattarai  3 Feb 09:55   -- tabscope.lua
+.rw-r--r--   636 deekshit.bhattarai 21 May 10:29   -- tmux-navigation.lua
+.rw-r--r--   400 deekshit.bhattarai 28 Aug 11:43   N- todo.lua
+.rw-r--r--   161 deekshit.bhattarai  9 Jun 14:36   -- todocomments.lua
+.rw-r--r--   140 deekshit.bhattarai 21 May 10:05   -- vimbebetter.lua

@@ -37,11 +37,13 @@ o.inccommand = "split"
 o.ignorecase = true
 o.smartcase = true
 
+-- [[ UI ]]
 o.termguicolors = true
 o.background = "dark"
 o.scrolloff = 10
 o.signcolumn = "yes"
 o.breakindent = true
+o.winbar = " "
 
 -- [[ Backspace ]]
 o.backspace = { "start", "eol", "indent" }

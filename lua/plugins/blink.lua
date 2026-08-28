@@ -46,6 +46,16 @@ require("blink.cmp").setup({
 					{ "label", gap = 2, "kind_icon" },
 					{ gap = 2, "source_name", "label_description" },
 				},
+				components = {
+					label = {
+						text = function(ctx)
+							return require("colorful-menu").blink_components_text(ctx)
+						end,
+						highlight = function(ctx)
+							return require("colorful-menu").blink_components_highlight(ctx)
+						end,
+					},
+				},
 			},
 			winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpmenuselection,search:none",
 		},

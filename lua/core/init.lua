@@ -1,6 +1,7 @@
 require("core.options")
 require("core.keymaps")
 require("core.autocommands")
+require("core.resonance")
 require("core.lsp")
 require("core.utils")
 require("core.neovide")
