@@ -227,81 +227,40 @@ require("resonance").load({
 		require("snacks").setup({
 			dashboard = { enabled = false },
 			indent = { enabled = true },
-			picker = {
+			picker = 
+ {
+  indent = {
+    enabled = true,
+    char = '▏',
+  },
+  scope = {
+    enabled = true,
+    underline = true,
+    char = '▏',
+  },
+  animate = {
+    enabled = vim.fn.has 'nvim-0.10' == 1,
+    style = 'up_down',
+    duration = {
+      step = 20,
+      total = 500,
+    },
+  },
+  chunk = {
+    enabled = true,
+  },
 
-	enabled = true,
-	ui_select = true,
-	formatters = {
-		file = {
-			filename_first = true,
-			truncate = 40,
-			filename_only = false,
-			icon_width = 2,
-			git_status_hl = true,
-		},
-	},
-	layout = {
-		-- The default layout for "telescopy" pickers, e.g. `files`, `commands`, ...
-		-- It will not override non-standard pickers, e.g. `explorer`, `lines`, ...
-		preset = function()
-			return vim.o.columns >= 120 and "telescope" or "vertical"
-		end,
-	},
-	layouts = {
-		telescope = {
-			-- Copy from https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#telescope
-			reverse = false,
-			layout = {
-				box = "horizontal",
-				backdrop = false,
-				width = 0.8, -- Change the width
-				height = 0.9,
-				border = "none",
-				{
-					box = "vertical",
-					{
-						win = "input",
-						height = 1,
-						border = "rounded",
-						title = "{title} {live} {flags}",
-						title_pos = "center",
-					},
-					{ win = "list", title = " Results ", title_pos = "center", border = "rounded" },
-				},
-				{
-					win = "preview",
-					title = "{preview:Preview}",
-					width = 0.51, -- Change the preview width
-					border = "rounded",
-					title_pos = "center",
-				},
-			},
-		},
-	},
-	sources = {
-		files = {},
-		explorer = {
-			layout = {
-				cycle = false,
-				layout = {
-					position = "right",
-				},
-			},
-			win = {
-				list = { wo = {} },
-			},
-		},
-		lines = {
-			layout = {
-				preset = function()
-					return vim.o.columns >= 120 and "telescope" or "vertical"
-				end,
-			},
-		},
-	},
-
-      }
-			terminal = require("plugins.snacks.terminal"),
+  filter = function(buf)
+    local b = vim.b[buf]
+    local bo = vim.bo[buf]
+    local excluded_filetypes = {
+      markdown = true,
+      text = true,
+    }
+    return vim.g.snacks_indent ~= false and b.snacks_indent ~= false and bo.buftype == '' and not excluded_filetypes[bo.filetype]
+  end,
+}    ,
+      terminal = require("plugins.snacks.terminal"),
 			statuscolumn = { enabled = true },
 			notifier = {
 				enabled = true,
