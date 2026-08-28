@@ -25,7 +25,7 @@ require("conform").setup({
 		typescript = { "prettierd" },
 		css = { "prettierd" },
 		python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-		toml = { "pyproject-fmt" },
+		toml = { "taplo" },
 		-- python = { "black", "isort" },
 		json = { "prettierd" },
 		jsonc = { "prettierd" },
