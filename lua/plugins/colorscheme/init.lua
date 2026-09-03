@@ -1,1 +1,1 @@
-require('plugins.colorscheme.catppuccin')
+require("plugins.colorscheme.catppuccin")

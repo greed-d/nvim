@@ -10,3 +10,5 @@ require("mini.tabline").setup({
 	-- One of 'left', 'right', 'none'.
 	tabpage_section = "right",
 })
+
+-- Override tabline highlights

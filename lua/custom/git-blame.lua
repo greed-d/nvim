@@ -299,7 +299,16 @@ function M.setup(opts)
 		group = aug,
 		callback = function(args)
 			local b = args.buf
-			fetch_timers[b] = require("snacks").util.stop(fetch_timers[b])
+
+			local ok, snacks = pcall(require, "snacks")
+			if ok and fetch_timers[b] then
+				fetch_timers[b] = snacks.util.stop(fetch_timers[b])
+			elseif fetch_timers[b] then
+				-- snacks not loaded — just drop the timer reference
+				-- (won't call .stop(), but prevents a hard crash)
+				fetch_timers[b] = nil
+			end
+
 			if b_state[b] then
 				if b_state[b].job then
 					b_state[b].job:kill("sigterm")

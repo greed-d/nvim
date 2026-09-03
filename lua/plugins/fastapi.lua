@@ -1,8 +1,8 @@
 vim.pack.add({
 	{
-		src = "https://github.com/lucasdetoledo4/fastapi-nvim",
+		src = "gh:lucasdetoledo4/fastapi-nvim",
 	},
-	"https://github.com/nvim-telescope/telescope.nvim",
+	"gh:nvim-telescope/telescope.nvim",
 })
 
 require("fastapi-nvim").setup()

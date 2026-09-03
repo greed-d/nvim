@@ -1,6 +1,6 @@
 vim.pack.add({
 	{
-		src = "https://github.com/saghen/blink.cmp",
+		src = "gh:saghen/blink.cmp",
 		version = vim.version.range("1.*"), -- version = 'v1.*', -- Use '*' to track tags/releases
 	},
 })
@@ -17,6 +17,20 @@ require("blink.cmp").setup({
 		["<C-h>"] = { "snippet_backward", "fallback" },
 		["<C-b>"] = { "scroll_documentation_up", "fallback" },
 		["<C-f>"] = { "scroll_documentation_down", "fallback" },
+		["<M-space>"] = {
+			function(cmp)
+				cmp.show({ providers = { "snippets", "lazydev", "lsp", "path", "buffer" } })
+			end,
+		},
+		["<CR>"] = {
+			function(cmp)
+				if cmp.is_visible() then
+					return cmp.accept()
+				else
+					return require("nvim-autopairs").autopairs_cr()
+				end
+			end,
+		},
 	},
 
 	fuzzy = {
@@ -43,15 +57,15 @@ require("blink.cmp").setup({
 		menu = {
 			draw = {
 				columns = {
-					{ "label", gap = 2, "kind_icon" },
-					{ gap = 2, "source_name", "label_description" },
+					{ "label", gap = 3, "kind_icon" },
+					{ gap = 3, "source_name", "label_description" },
 				},
 			},
 			winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpmenuselection,search:none",
 		},
 		accept = {
 			auto_brackets = {
-				enabled = true,
+				enabled = false,
 			},
 		},
 	},

@@ -1,11 +1,11 @@
 vim.pack.add({
 	{
-		src = "https://github.com/nvim-neo-tree/neo-tree.nvim",
+		src = "gh:nvim-neo-tree/neo-tree.nvim",
 		version = vim.version.range("3"),
 	},
 	-- dependencies
-	"https://github.com/nvim-lua/plenary.nvim",
-	"https://github.com/MunifTanjim/nui.nvim",
+	"gh:nvim-lua/plenary.nvim",
+	"gh:MunifTanjim/nui.nvim",
 	-- "https://github.com/nvim-tree/nvim-web-devicons",
 })
 
@@ -40,9 +40,10 @@ require("neo-tree").setup({
 			},
 		},
 		bind_to_cwd = false,
-		follow_current_file = { enabled = true },
 		use_libuv_file_watcher = true,
 	},
+	follow_current_file = { enabled = true },
+	hijack_netrw_behaviour = "disabled",
 	window = {
 		mappings = {
 			["l"] = "open",

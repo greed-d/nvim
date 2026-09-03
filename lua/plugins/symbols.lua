@@ -1,4 +1,4 @@
-vim.pack.add({ "https://www.github.com/Wansmer/symbol-usage.nvim" })
+vim.pack.add({ "gh:Wansmer/symbol-usage.nvim" })
 
 local function text_format(symbol)
 	local res = {}

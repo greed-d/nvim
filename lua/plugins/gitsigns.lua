@@ -1,4 +1,4 @@
-vim.pack.add({ "https://www.github.com/lewis6991/gitsigns.nvim" })
+vim.pack.add({ "gh:lewis6991/gitsigns.nvim" })
 
 require("gitsigns").setup({
 	signs = {
@@ -59,7 +59,6 @@ require("gitsigns").setup({
 		map("n", "<leader>gu", gitsigns.stage_hunk, { desc = "git [u]ndo stage hunk" })
 		map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "git [R]eset buffer" })
 		map("n", "<leader>gv", gitsigns.preview_hunk, { desc = "git [p]review hunk" })
-		map("n", "<leader>gb", gitsigns.blame_line, { desc = "git [b]lame line" })
 		map("n", "<leader>gd", gitsigns.diffthis, { desc = "git [d]iff against index" })
 		map("n", "<leader>gD", function()
 			gitsigns.diffthis("@")

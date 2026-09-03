@@ -1,5 +1,5 @@
 vim.pack.add({
-	{ src = "https://github.com/folke/snacks.nvim" },
+	{ src = "gh:folke/snacks.nvim" },
 })
 require("snacks").setup({
 	dashboard = { enabled = false },

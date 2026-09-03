@@ -1,6 +1,6 @@
 vim.pack.add({
 	{
-		src = "https://github.com/mistweaverco/kulala.nvim",
+		src = "gh:mistweaverco/kulala.nvim",
 		-- version = 'v1.*', -- Use '*' to track tags/releases
 	},
 })
