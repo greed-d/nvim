@@ -5,7 +5,16 @@ vim.pack.add({
 
 require("mason").setup()
 require("mason-tool-installer").setup({
-	ensure_installed = { "lua-language-server", "basedpyright", "ruff", "stylua", "ty" },
+	ensure_installed = {
+		"lua-language-server",
+		"basedpyright",
+		"ruff",
+		"stylua",
+		"ty",
+		"bash-language-server",
+		"clangd",
+		"gopls",
+	},
 })
 
 map("n", "<leader>cm", "<cmd>Mason<CR>", { desc = "Mason open" })
