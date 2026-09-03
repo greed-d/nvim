@@ -1,5 +1,5 @@
 vim.pack.add({
-	"https://www.github.com/SmiteshP/nvim-navic",
+	"gh:SmiteshP/nvim-navic",
 })
 
 require("nvim-navic").setup({

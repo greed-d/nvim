@@ -1,6 +1,6 @@
 vim.pack.add({
 	{
-		src = "https://github.com/ThePrimeagen/harpoon",
+		src = "gh:ThePrimeagen/harpoon",
 		version = "harpoon2",
 	},
 })

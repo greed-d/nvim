@@ -1,6 +1,6 @@
 vim.pack.add({
 	{
-		src = "https://github.com/saghen/blink.cmp",
+		src = "gh:saghen/blink.cmp",
 		version = vim.version.range("1.*"), -- version = 'v1.*', -- Use '*' to track tags/releases
 	},
 })
@@ -52,8 +52,8 @@ require("blink.cmp").setup({
 		menu = {
 			draw = {
 				columns = {
-					{ "label", gap = 2, "kind_icon" },
-					{ gap = 2, "source_name", "label_description" },
+					{ "label", gap = 3, "kind_icon" },
+					{ gap = 3, "source_name", "label_description" },
 				},
 			},
 			winhighlight = "normal:normal,floatborder:floatborder,cursorline:blinkcmpmenuselection,search:none",

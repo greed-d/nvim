@@ -1,6 +1,6 @@
 vim.pack.add({
 	{
-		src = "https://github.com/nvim-lualine/lualine.nvim",
+		src = "gh:nvim-lualine/lualine.nvim",
 		-- version = 'v1.*', -- Use '*' to track tags/releases
 	},
 })

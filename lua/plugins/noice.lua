@@ -1,10 +1,10 @@
 vim.pack.add({
 	{
-		src = "https://github.com/folke/noice.nvim",
+		src = "gh:folke/noice.nvim",
 	},
 	-- dependencies
-	"https://github.com/rcarriga/nvim-notify",
-	"https://github.com/MunifTanjim/nui.nvim",
+	"gh:rcarriga/nvim-notify",
+	"gh:MunifTanjim/nui.nvim",
 	-- "https://github.com/nvim-tree/nvim-web-devicons",
 })
 

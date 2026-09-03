@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/backdround/tabscope.nvim" })
+vim.pack.add({ "gh:backdround/tabscope.nvim" })
 
 require("tabscope").setup({})
 
