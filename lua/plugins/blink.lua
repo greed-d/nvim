@@ -17,6 +17,11 @@ require("blink.cmp").setup({
 		["<C-h>"] = { "snippet_backward", "fallback" },
 		["<C-b>"] = { "scroll_documentation_up", "fallback" },
 		["<C-f>"] = { "scroll_documentation_down", "fallback" },
+		["<M-space>"] = {
+			function(cmp)
+				cmp.show({ providers = { "snippets", "lazydev", "lsp", "path", "buffer" } })
+			end,
+		},
 		["<CR>"] = {
 			function(cmp)
 				if cmp.is_visible() then
