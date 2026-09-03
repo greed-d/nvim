@@ -98,3 +98,8 @@ map("n", "<leader>cf", vim.lsp.buf.format, { desc = "LSP : [C]ode [F]ormatting" 
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP : [C]ode [R]ename" })
 map("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
+
+-- [[ MACROS FOR PYTHON ]]
+map("n", "<leader>cl", "yiwoprint(pa)", { desc = "Copy word under cursor and print it in next line" })
+
+-- c  "j   yiwoprint(^[p
