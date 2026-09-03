@@ -15,6 +15,22 @@ require("neo-tree").setup({
 	close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
 	sources = { "filesystem", "buffers", "git_status" },
 	open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
+	enable_git_status = true,
+	git_status = {
+		symbols = {
+			-- Change type
+			added = "✚", -- or "✚"
+			modified = "", -- or ""
+			deleted = "✖", -- this can only be used in the git_status source
+			renamed = "󰁕", -- this can only be used in the git_status source
+			-- Status type
+			untracked = "",
+			ignored = "",
+			unstaged = "󰄱",
+			staged = "",
+			conflict = "",
+		},
+	},
 	filesystem = {
 		window = {
 			position = "right",
