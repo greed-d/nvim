@@ -2,7 +2,21 @@ vim.pack.add({
 	{ src = "gh:catppuccin/nvim" },
 })
 
-vim.cmd("colorscheme catppuccin-mocha")
+require("catppuccin").setup({
+	flavour = "mocha",
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		nvimtree = true,
+		notify = true,
+		mini = {
+			enabled = true,
+			indentscope_color = "",
+		},
+	},
+})
+
+vim.cmd.colorscheme("catppuccin-nvim")
 local function set_highlight(group, opts)
 	vim.api.nvim_set_hl(0, group, opts)
 end
@@ -27,3 +41,14 @@ set_highlight("CursorLineNr", { fg = "#B4BEFF" })
 set_highlight("BlinkCmpDocBorder", { fg = "#252434", bg = "#252434" })
 set_highlight("MiniTablineCurrent", { bg = mocha.surface1, bold = true })
 set_highlight("MiniTablineModifiedCurrent", { bg = mocha.surface1, fg = mocha.red, bold = true, italic = true })
+
+-- Mini Icons color override?
+set_highlight("MiniIconsAzure", { fg = mocha.sapphire })
+set_highlight("MiniIconsBlue", { fg = mocha.blue })
+set_highlight("MiniIconsCyan", { fg = mocha.sky })
+set_highlight("MiniIconsGreen", { fg = mocha.green })
+set_highlight("MiniIconsGrey", { fg = mocha.subtext0 })
+set_highlight("MiniIconsOrange", { fg = mocha.peach })
+set_highlight("MiniIconsPurple", { fg = mocha.mauve })
+set_highlight("MiniIconsRed", { fg = mocha.red })
+set_highlight("MiniIconsYellow", { fg = mocha.yellow })
