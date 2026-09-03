@@ -59,7 +59,6 @@ require("gitsigns").setup({
 		map("n", "<leader>gu", gitsigns.stage_hunk, { desc = "git [u]ndo stage hunk" })
 		map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "git [R]eset buffer" })
 		map("n", "<leader>gv", gitsigns.preview_hunk, { desc = "git [p]review hunk" })
-		map("n", "<leader>gb", gitsigns.blame_line, { desc = "git [b]lame line" })
 		map("n", "<leader>gd", gitsigns.diffthis, { desc = "git [d]iff against index" })
 		map("n", "<leader>gD", function()
 			gitsigns.diffthis("@")
@@ -68,7 +67,7 @@ require("gitsigns").setup({
 		map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "[T]oggle git show [b]lame line" })
 		map("n", "<leader>tD", gitsigns.preview_hunk_inline, { desc = "[T]oggle git show [D]eleted" })
 	end,
-	current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+	current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
 	current_line_blame_opts = {
 		virt_text = true,
 		virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
