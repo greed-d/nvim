@@ -24,9 +24,10 @@ require("neo-tree").setup({
 			},
 		},
 		bind_to_cwd = false,
-		follow_current_file = { enabled = true },
 		use_libuv_file_watcher = true,
 	},
+	follow_current_file = { enabled = true },
+	hijack_netrw_behaviour = "disabled",
 	window = {
 		mappings = {
 			["l"] = "open",
