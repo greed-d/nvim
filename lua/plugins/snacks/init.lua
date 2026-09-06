@@ -13,7 +13,7 @@ require("snacks").setup({
 		margin = { top = 0, right = 0, bottom = 1 },
 	},
 
-	image = { enabled = false },
+	image = { enabled = true },
 	git = { enabled = false },
 	gitbrowse = { enabled = false },
 	bigfile = { enabled = true },
