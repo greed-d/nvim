@@ -27,7 +27,7 @@ require("conform").setup({
 		python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 		toml = { "taplo" },
 		-- python = { "black", "isort" },
-		json = { "prettierd" },
+		json = { "jq" },
 		jsonc = { "prettierd" },
 		html = { "djlint" },
 		cpp = { "clang-format" },

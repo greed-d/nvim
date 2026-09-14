@@ -3,6 +3,7 @@ require("core")
 -- Allow compact GitHub sources in plugin specs, e.g. "gh:folke/noice.nvim".
 -- `vim.pack` receives a normal HTTPS URL, so Git needs no global alias.
 local pack_add = vim.pack.add
+
 vim.pack.add = function(specs, opts)
 	for index, spec in ipairs(specs) do
 		if type(spec) == "string" then

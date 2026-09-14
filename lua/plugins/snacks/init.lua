@@ -23,7 +23,7 @@ require("snacks").setup({
 	scope = { enabled = false },
 	words = { enabled = false },
 	bufdelete = { enabled = false },
-	scroll = { enabled = true },
+	scroll = { enabled = false },
 	dim = { enabled = false },
 })
 -- Snacks Picker Keymaps

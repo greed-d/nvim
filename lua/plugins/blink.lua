@@ -3,6 +3,7 @@ vim.pack.add({
 		src = "gh:saghen/blink.cmp",
 		version = vim.version.range("1.*"), -- version = 'v1.*', -- Use '*' to track tags/releases
 	},
+	"gh:mikavilpas/blink-ripgrep.nvim",
 })
 
 require("blink.cmp").setup({
@@ -79,7 +80,7 @@ require("blink.cmp").setup({
 
 	sources = {
 		-- add lazydev to your completion providers
-		default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+		default = { "lazydev", "lsp", "path", "snippets", "buffer", "ripgrep" },
 		providers = {
 			lazydev = {
 				name = "LazyDev",
@@ -87,8 +88,13 @@ require("blink.cmp").setup({
 				-- make lazydev completions top priority (see `:h blink.cmp`)
 				score_offset = 100,
 			},
+			ripgrep = {
+				module = "blink-ripgrep",
+				name = "RipGrep",
+				opts = {},
+			},
 
-			dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+			-- dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 		},
 	},
 })
