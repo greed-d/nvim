@@ -21,7 +21,6 @@ o.rnu = true
 o.expandtab = true
 o.smartindent = true
 o.autoindent = true
-o.smartindent = true
 o.shiftwidth = 2
 o.tabstop = 2
 o.softtabstop = 2
@@ -69,8 +68,8 @@ o.whichwrap:append("<>[]hl")
 -- [[ Mouse Support ]]
 o.mouse = "a"
 
--- [[ UFO options ]]
-vim.o.foldcolumn = "1" -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- [[ Folding ]] (treesitter 'foldexpr' is wired up in core/lsp/treesitter.lua)
+vim.o.foldcolumn = "1"
+vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
