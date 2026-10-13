@@ -4,5 +4,5 @@ return {
     position = 'float',
     style = 'terminal',
   },
-  inteactive = true,
+  interactive = true,
 }
