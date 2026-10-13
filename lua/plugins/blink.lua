@@ -98,3 +98,9 @@ require("blink.cmp").setup({
 		},
 	},
 })
+
+-- Advertise blink's completion capabilities to every language server.
+-- (Must come after blink is on the rtp; server configs are resolved later, at FileType.)
+vim.lsp.config("*", {
+	capabilities = require("blink.cmp").get_lsp_capabilities(),
+})
