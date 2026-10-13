@@ -50,7 +50,7 @@ map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new
 -- [[ Buffer Stuff ]]
 map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-map("n", "<leader>bo", '<cmd>write|%bdelete|edit #|normal`"<CR>', { desc = "Next Buffer" })
+map("n", "<leader>bo", '<cmd>write|%bdelete|edit #|normal`"<CR>', { desc = "Close Other Buffers" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
@@ -67,10 +67,11 @@ map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
 
 -- [[ Diagnostics Stuff ]]
 local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-	severity = severity and vim.diagnostic.severity[severity] or nil
 	return function()
-		go({ severity = severity })
+		vim.diagnostic.jump({
+			count = next and 1 or -1,
+			severity = severity and vim.diagnostic.severity[severity] or nil,
+		})
 	end
 end
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
@@ -96,10 +97,9 @@ map("n", "K", vim.lsp.buf.hover, { desc = "LSP : Hover" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP : [C]ode [A]ction" })
 map("n", "<leader>cf", vim.lsp.buf.format, { desc = "LSP : [C]ode [F]ormatting" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP : [C]ode [R]ename" })
-map("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
-map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
 
 -- [[ MACROS FOR PYTHON ]]
-map("n", "<leader>cl", "yiwoprint(pa)", { desc = "Copy word under cursor and print it in next line" })
-
--- c  "j   yiwoprint(^[p
+map("n", "<leader>cl", function()
+	local word = vim.fn.expand("<cword>")
+	vim.api.nvim_put({ "print(" .. word .. ")" }, "l", true, true)
+end, { desc = "Print word under cursor on next line" })
