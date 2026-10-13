@@ -24,5 +24,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- [[ DON'T ADD COMMENTS TO NEWLINE ]]
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("FormatOptions", { clear = true }),
+	desc = "Don't auto-insert comment leaders on new lines",
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+	end,
+})
