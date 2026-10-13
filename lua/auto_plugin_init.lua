@@ -1,16 +1,15 @@
--- auto_init_plugins.lua
+-- auto_plugin_init.lua
+-- Auto-discovers config files under lua/plugins and loads each one exactly once.
+
 local M = {}
 
 -- Configuration: path to the plugins root directory (relative to your config)
--- You may want to use `vim.fn.stdpath('config')` or `vim.fn.stdpath('data')` depending.
 local plugins_root = vim.fn.stdpath('config') .. '/lua' .. '/plugins'
-
--- Filename pattern to look for
-local target_filename = 'init.lua'
+local lua_root = vim.fn.stdpath('config') .. '/lua'
 
 -- Recursively scan a directory and collect files
 local function scan_dir(dir, file_list)
-  local luv = vim.loop
+  local luv = vim.uv
   local fs = luv.fs_scandir(dir)
   if not fs then
     return
@@ -29,21 +28,28 @@ local function scan_dir(dir, file_list)
   end
 end
 
--- Convert full path to a Vim canonicalised path and source it
-local function source_file(path)
-  -- optionally, you might want to guard with pcall
-  -- print or log what you're sourcing
-  vim.cmd('luafile ' .. vim.fn.fnameescape(path))
+-- Convert a file path under lua/ to a module name,
+-- e.g. "<config>/lua/plugins/mini/init.lua" -> "plugins.mini"
+local function to_module(path)
+  local rel = path:sub(#lua_root + 2)
+  rel = rel:gsub('%.lua$', '')
+  rel = rel:gsub('/init$', '')
+  return (rel:gsub('/', '.'))
 end
 
 function M.init()
   local files = {}
   scan_dir(plugins_root, files)
+  -- Sorted paths give a deterministic load order (parents before their children)
+  table.sort(files)
+
   for _, f in ipairs(files) do
-    -- you might consider wrapping in pcall:
-    local ok, err = pcall(source_file, f)
+    -- require() instead of :luafile so each file runs exactly once, even when
+    -- it is also required by a sibling/parent init.lua
+    local mod = to_module(f)
+    local ok, err = pcall(require, mod)
     if not ok then
-      vim.notify('Error sourcing plugin init file: ' .. f .. '\n' .. err, vim.log.levels.ERROR)
+      vim.notify('Error loading plugin module: ' .. mod .. '\n' .. err, vim.log.levels.ERROR)
     end
   end
 end
