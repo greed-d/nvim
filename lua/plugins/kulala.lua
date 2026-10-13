@@ -25,4 +25,4 @@ end, { desc = "Replay last request" })
 
 map("n", "<leader>re", function()
 	require("kulala").set_selected_env()
-end, { desc = "Replay last request" })
+end, { desc = "Set request environment" })
