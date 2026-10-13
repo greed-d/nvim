@@ -22,6 +22,12 @@ local function set_highlight(group, opts)
 end
 
 local mocha = require("catppuccin.palettes").get_palette("mocha")
+set_highlight("Normal", { bg = "NONE" })
+set_highlight("NormalFloat", { bg = "NONE" })
+set_highlight("NormalNC", { bg = "NONE" })
+-- set_highlight("FloatBorder", { bg = "NONE" })
+set_highlight("SignColumn", { bg = "NONE" })
+set_highlight("EndOfBuffer", { bg = "NONE" })
 
 set_highlight("FloatBorder", { bg = "NONE", fg = mocha.surface0 })
 set_highlight("SnacksPickerTitle", { bg = mocha.blue, fg = mocha.crust })

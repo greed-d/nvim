@@ -11,4 +11,10 @@ require("mini.tabline").setup({
 	tabpage_section = "right",
 })
 
+local function set_highlight(group, opts)
+	vim.api.nvim_set_hl(0, group, opts)
+end
+
+-- set_highlight("MiniTablineCurrent", { bg = "NONE" })
+set_highlight("MiniTablineTabpagesection", { bg = "NONE" })
 -- Override tabline highlights
