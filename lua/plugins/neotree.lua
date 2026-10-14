@@ -106,4 +106,4 @@ require("neo-tree").setup({
 	},
 })
 
-map({ "n", "v" }, "\\", ":Neotree reveal<CR>")
+map({ "n", "v" }, "\\", ":Neotree reveal<CR>", { desc = "Neo-tree reveal" })
