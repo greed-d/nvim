@@ -41,4 +41,4 @@ require("nvim-navic").setup({
 })
 
 -- Reserve space for navic even if there is no element to display
-vim.opt.winbar = " "
+-- (winbar itself is owned by lualine, see lua/plugins/lualine.lua)

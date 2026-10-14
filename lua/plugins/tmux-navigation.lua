@@ -2,10 +2,7 @@ vim.pack.add({ "gh:alexghergh/nvim-tmux-navigation" })
 
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 nvim_tmux_nav.setup({
-
-	nvim_tmux_nav.setup({
-		disable_when_zoomed = true, -- defaults to false
-	}),
+	disable_when_zoomed = true, -- defaults to false
 })
 
 vim.keymap.set("n", "<C-w>h", nvim_tmux_nav.NvimTmuxNavigateLeft)

@@ -73,11 +73,6 @@ local config = {
 		-- 	},
 		-- },
 	},
-	inactive_winbar = {
-		lualine_c = {
-			"hello",
-		},
-	},
 	sections = {
 		-- these are to remove the defaults
 		lualine_a = {},
@@ -228,7 +223,7 @@ ins_left({
 	-- Lsp server name .
 	function()
 		local msg = "No Active Lsp"
-		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+		local buf_ft = vim.bo[0].filetype
 		local clients = vim.lsp.get_clients()
 		if next(clients) == nil then
 			return msg
